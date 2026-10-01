@@ -1,0 +1,56 @@
+# NOTE: input paths were machine-specific; the prefix has been replaced with '.'.
+# Edit the path constants near the top if your layout differs from the repo layout.
+# Ultralytics YOLO 🚀, AGPL-3.0 license
+# YOLOv8s-P1 (Paper 3, NEU-DET 钢材表面缺陷): stride=2 的 P1 检测头
+# 设计说明：
+#   · 动机分两个数据集看（2026-09-27 实测尺度画像，见 _verify/scale_profile.json）：
+#       NEU-DET（200×200 热轧）：缺陷折算到 640 输入后中位 218 px、<32px 占 0% —— 浅层头在 NEU 上
+#         **没有尺度上的必要性**，这也是它可能不涨的原因（负面结果如实报，见 README 第 8 节）；
+#       GC10-DET（2048×1000 冷轧）：中位 84 px、<32px 占 25%、类别不平衡 12:1 —— 小目标与不平衡的
+#         主张放在 GC10 上更站得住（yiwu 22px / chongkong 25px / youban 33px 是最小的三类）。
+#     stride=4 的 P2 做的人已经很多（2024-2026），stride=2 的 P1 在钢材缺陷上尚无同题工作
+#   · P1 支路按“新分支放 head 末尾、用绝对索引取骨干输出”的规则接线：
+#     节点 22 = Conv(1×1) 把骨干第 0 层（P1/2, stride=2）投影成检测分支；
+#     节点 23 = Detect([22, 15, 18, 21]) = P1/P3/P4/P5 四尺度（不含 P2）
+#   · scales 用标准 YOLOv8s 深度/宽度 [0.33, 0.50, 1024]，保证与 v_base 只差“检测头集合”这一个因素
+#   · 期望 strides = [2, 8, 16, 32]（建模型后脚本会断言）
+#   · 注意：P1 的 anchor 网格是 320×320=102400/图（P2 为 160²、标准三尺度共 8400），
+#     训练时按 batch 8 跑（论文二在相近 anchor 量级上遇过 assigner CUDA OOM → CPU 回退）
+
+nc: 6
+names: ['crazing', 'inclusion', 'patches', 'pitted_surface', 'rolled-in_scale', 'scratches']
+scales:
+  s: [0.33, 0.50, 1024]  # 标准 YOLOv8s 缩放（深度 0.33 / 宽度 0.50 / max_channels 1024）
+
+backbone:
+  # [from, repeats, module, args]
+  - [-1, 1, Conv, [64, 3, 2]]      # 0-P1/2  ← P1 支路取自这一层（绝对索引 0）
+  - [-1, 1, Conv, [128, 3, 2]]     # 1-P2/4
+  - [-1, 3, C2f, [128, True]]      # 2  ← P2 特征（本 yaml 不使用，Detect 不接它）
+  - [-1, 1, Conv, [256, 3, 2]]     # 3-P3/8
+  - [-1, 6, C2f, [256, True]]      # 4  ← P3 特征
+  - [-1, 1, Conv, [512, 3, 2]]     # 5-P4/16
+  - [-1, 6, C2f, [512, True]]      # 6  ← P4 特征
+  - [-1, 1, Conv, [1024, 3, 2]]    # 7-P5/32
+  - [-1, 3, C2f, [1024, True]]     # 8  ← P5 特征
+  - [-1, 1, SPPF, [1024, 5]]       # 9
+
+head:
+  - [-1, 1, nn.Upsample, [None, 2, 'nearest']]   # 10
+  - [[-1, 6], 1, Concat, [1]]                     # 11 cat backbone P4
+  - [-1, 3, C2f, [512]]                           # 12
+
+  - [-1, 1, nn.Upsample, [None, 2, 'nearest']]   # 13
+  - [[-1, 4], 1, Concat, [1]]                     # 14 cat backbone P3
+  - [-1, 3, C2f, [256]]                           # 15 (P3/8-small)
+
+  - [-1, 1, Conv, [256, 3, 2]]                    # 16
+  - [[-1, 12], 1, Concat, [1]]                    # 17
+  - [-1, 3, C2f, [512]]                           # 18 (P4/16-medium)
+
+  - [-1, 1, Conv, [512, 3, 2]]                    # 19
+  - [[-1, 9], 1, Concat, [1]]                     # 20
+  - [-1, 3, C2f, [1024]]                          # 21 (P5/32-large)
+
+  - [0, 1, Conv, [64, 1, 1]]                      # 22 ← P1 投影支路（绝对索引 0 = 骨干 P1/2）
+  - [[22, 15, 18, 21], 1, Detect, [nc]]           # 23 Detect(P1, P3, P4, P5)

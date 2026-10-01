@@ -1,0 +1,9 @@
+# NOTE: input paths were machine-specific; the prefix has been replaced with '.'.
+# Edit the path constants near the top if your layout differs from the repo layout.
+# GC10-DET 论文固定划分 (split seed=0, 与训练种子解耦) — AutoDL 路径版
+path: ${DATA_ROOT}/gc10/data/GC10-DET-yolo
+train: train_resampled.txt
+val: val
+test: test
+nc: 10
+names: ['chongkong', 'hanfeng', 'yueyawan', 'shuiban', 'youban', 'siban', 'yiwu', 'yahen', 'zhehen', 'yaozhe']

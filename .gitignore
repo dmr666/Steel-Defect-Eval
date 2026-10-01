@@ -1,0 +1,32 @@
+# checkpoints / weights (≈4 GB, not redistributed)
+*.pt
+*.pth
+*.onnx
+*.engine
+
+# archives
+*.tar.gz
+*.zip
+
+# datasets
+data/
+datasets/
+images/
+labels/
+
+# python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# prediction dumps
+pred_*/
+runs/
+runs_*/
+*.cache
+
+# OS
+.DS_Store
+Thumbs.db

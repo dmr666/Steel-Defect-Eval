@@ -1,0 +1,9 @@
+# NOTE: input paths were machine-specific; the prefix has been replaced with '.'.
+# Edit the path constants near the top if your layout differs from the repo layout.
+# NEU-DET paper3 fixed split (AutoDL paths)
+path: ${DATA_ROOT}/neu/data/NEU-DET-split
+train: train_resampled.txt
+val: val
+test: test
+nc: 6
+names: ['crazing', 'inclusion', 'patches', 'pitted_surface', 'rolled-in_scale', 'scratches']

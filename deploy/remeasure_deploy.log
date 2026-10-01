@@ -1,0 +1,2208 @@
+start Wed Sep 30 15:11:36 CST 2026
+=== [1/4] GC10 nano ===
+  [bridge] 6 个自定义类已挂到 __main__
+环境: {"torch": "2.1.2+cu118", "cuda": "11.8", "gpu": "NVIDIA GeForce RTX 4090", "cpu": "CPU(s):                          128\nModel name:                      Intel(R) Xeon(R) Gold 6430", "device_used": "cuda:0", "batch": 1, "iters": 100, "warmup": 20}
+
+待测 15 个 cell，batch=1 iters=100
+
+---- v_base_seed2024 (imgsz=640) ----
+  pt_fp32  p50=4.40 ms  p95=4.50 ms  mem=159MB
+  pt_fp16  p50=6.28 ms  p95=7.07 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+Model summary (fused): 73 layers, 3,007,598 parameters, 0 gradients, 8.1 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs_nano/v_base_seed2024/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 14, 8400) (6.0 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.2s, saved as 'runs_nano/v_base_seed2024/weights/best.onnx' (11.7 MB)
+
+Export complete (1.4s)
+Results saved to [1m${DATA_ROOT}/gc10/runs_nano/v_base_seed2024/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs_nano/v_base_seed2024/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs_nano/v_base_seed2024/weights/best.onnx imgsz=640 data=${DATA_ROOT}/gc10/data/GC10-DET-yolo/gc10_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=590.47 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_base_seed42 (imgsz=640) ----
+  pt_fp32  p50=5.43 ms  p95=5.50 ms  mem=159MB
+  pt_fp16  p50=6.09 ms  p95=6.82 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+Model summary (fused): 73 layers, 3,007,598 parameters, 0 gradients, 8.1 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs_nano/v_base_seed42/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 14, 8400) (6.0 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.2s, saved as 'runs_nano/v_base_seed42/weights/best.onnx' (11.7 MB)
+
+Export complete (1.4s)
+Results saved to [1m${DATA_ROOT}/gc10/runs_nano/v_base_seed42/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs_nano/v_base_seed42/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs_nano/v_base_seed42/weights/best.onnx imgsz=640 data=${DATA_ROOT}/gc10/data/GC10-DET-yolo/gc10_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=699.38 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_base_seed7 (imgsz=640) ----
+  pt_fp32  p50=4.51 ms  p95=5.29 ms  mem=159MB
+  pt_fp16  p50=5.16 ms  p95=6.06 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+Model summary (fused): 73 layers, 3,007,598 parameters, 0 gradients, 8.1 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs_nano/v_base_seed7/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 14, 8400) (6.0 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.0s, saved as 'runs_nano/v_base_seed7/weights/best.onnx' (11.7 MB)
+
+Export complete (1.1s)
+Results saved to [1m${DATA_ROOT}/gc10/runs_nano/v_base_seed7/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs_nano/v_base_seed7/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs_nano/v_base_seed7/weights/best.onnx imgsz=640 data=${DATA_ROOT}/gc10/data/GC10-DET-yolo/gc10_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=503.73 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_dcsa_seed2024 (imgsz=640) ----
+  pt_fp32  p50=7.06 ms  p95=7.35 ms  mem=159MB
+  pt_fp16  p50=7.81 ms  p95=12.77 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+YOLOv8n-gc10 summary (fused): 103 layers, 3,013,213 parameters, 0 gradients, 8.1 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs_nano/v_dcsa_seed2024/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 14, 8400) (6.0 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.4s, saved as 'runs_nano/v_dcsa_seed2024/weights/best.onnx' (11.8 MB)
+
+Export complete (1.6s)
+Results saved to [1m${DATA_ROOT}/gc10/runs_nano/v_dcsa_seed2024/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs_nano/v_dcsa_seed2024/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs_nano/v_dcsa_seed2024/weights/best.onnx imgsz=640 data=${DATA_ROOT}/gc10/data/GC10-DET-yolo/gc10_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=605.79 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_dcsa_seed42 (imgsz=640) ----
+  pt_fp32  p50=7.33 ms  p95=7.43 ms  mem=159MB
+  pt_fp16  p50=8.12 ms  p95=8.29 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+YOLOv8n-gc10 summary (fused): 103 layers, 3,013,213 parameters, 0 gradients, 8.1 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs_nano/v_dcsa_seed42/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 14, 8400) (6.0 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.7s, saved as 'runs_nano/v_dcsa_seed42/weights/best.onnx' (11.8 MB)
+
+Export complete (1.9s)
+Results saved to [1m${DATA_ROOT}/gc10/runs_nano/v_dcsa_seed42/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs_nano/v_dcsa_seed42/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs_nano/v_dcsa_seed42/weights/best.onnx imgsz=640 data=${DATA_ROOT}/gc10/data/GC10-DET-yolo/gc10_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=694.62 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_dcsa_seed7 (imgsz=640) ----
+  pt_fp32  p50=7.32 ms  p95=7.62 ms  mem=159MB
+  pt_fp16  p50=8.24 ms  p95=8.64 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+YOLOv8n-gc10 summary (fused): 103 layers, 3,013,213 parameters, 0 gradients, 8.1 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs_nano/v_dcsa_seed7/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 14, 8400) (6.0 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.8s, saved as 'runs_nano/v_dcsa_seed7/weights/best.onnx' (11.8 MB)
+
+Export complete (2.0s)
+Results saved to [1m${DATA_ROOT}/gc10/runs_nano/v_dcsa_seed7/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs_nano/v_dcsa_seed7/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs_nano/v_dcsa_seed7/weights/best.onnx imgsz=640 data=${DATA_ROOT}/gc10/data/GC10-DET-yolo/gc10_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=607.49 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_full_seed2024 (imgsz=640) ----
+  pt_fp32  p50=7.14 ms  p95=7.69 ms  mem=169MB
+  pt_fp16  p50=8.07 ms  p95=8.41 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+YOLOv8n-p2-gc10 summary (fused): 121 layers, 2,927,975 parameters, 0 gradients, 12.2 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs_nano/v_full_seed2024/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 14, 34000) (5.9 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.6s, saved as 'runs_nano/v_full_seed2024/weights/best.onnx' (11.9 MB)
+
+Export complete (1.9s)
+Results saved to [1m${DATA_ROOT}/gc10/runs_nano/v_full_seed2024/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs_nano/v_full_seed2024/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs_nano/v_full_seed2024/weights/best.onnx imgsz=640 data=${DATA_ROOT}/gc10/data/GC10-DET-yolo/gc10_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=1400.00 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_full_seed42 (imgsz=640) ----
+  pt_fp32  p50=7.23 ms  p95=10.02 ms  mem=169MB
+  pt_fp16  p50=9.89 ms  p95=14.02 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+YOLOv8n-p2-gc10 summary (fused): 121 layers, 2,927,975 parameters, 0 gradients, 12.2 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs_nano/v_full_seed42/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 14, 34000) (5.9 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 2.0s, saved as 'runs_nano/v_full_seed42/weights/best.onnx' (11.9 MB)
+
+Export complete (2.2s)
+Results saved to [1m${DATA_ROOT}/gc10/runs_nano/v_full_seed42/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs_nano/v_full_seed42/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs_nano/v_full_seed42/weights/best.onnx imgsz=640 data=${DATA_ROOT}/gc10/data/GC10-DET-yolo/gc10_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=1208.48 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_full_seed7 (imgsz=640) ----
+  pt_fp32  p50=8.81 ms  p95=9.06 ms  mem=169MB
+  pt_fp16  p50=8.22 ms  p95=9.58 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+YOLOv8n-p2-gc10 summary (fused): 121 layers, 2,927,975 parameters, 0 gradients, 12.2 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs_nano/v_full_seed7/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 14, 34000) (5.9 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.7s, saved as 'runs_nano/v_full_seed7/weights/best.onnx' (11.9 MB)
+
+Export complete (1.9s)
+Results saved to [1m${DATA_ROOT}/gc10/runs_nano/v_full_seed7/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs_nano/v_full_seed7/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs_nano/v_full_seed7/weights/best.onnx imgsz=640 data=${DATA_ROOT}/gc10/data/GC10-DET-yolo/gc10_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=1201.87 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_p2_seed2024 (imgsz=640) ----
+  pt_fp32  p50=6.98 ms  p95=7.20 ms  mem=169MB
+  pt_fp16  p50=7.99 ms  p95=9.40 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+YOLOv8n-p2-gc10 summary (fused): 91 layers, 2,922,360 parameters, 0 gradients, 12.2 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs_nano/v_p2_seed2024/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 14, 34000) (5.9 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.5s, saved as 'runs_nano/v_p2_seed2024/weights/best.onnx' (11.9 MB)
+
+Export complete (1.7s)
+Results saved to [1m${DATA_ROOT}/gc10/runs_nano/v_p2_seed2024/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs_nano/v_p2_seed2024/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs_nano/v_p2_seed2024/weights/best.onnx imgsz=640 data=${DATA_ROOT}/gc10/data/GC10-DET-yolo/gc10_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=1295.60 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_p2_seed42 (imgsz=640) ----
+  pt_fp32  p50=6.96 ms  p95=8.22 ms  mem=169MB
+  pt_fp16  p50=7.99 ms  p95=11.52 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+YOLOv8n-p2-gc10 summary (fused): 91 layers, 2,922,360 parameters, 0 gradients, 12.2 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs_nano/v_p2_seed42/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 14, 34000) (5.9 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.5s, saved as 'runs_nano/v_p2_seed42/weights/best.onnx' (11.9 MB)
+
+Export complete (1.7s)
+Results saved to [1m${DATA_ROOT}/gc10/runs_nano/v_p2_seed42/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs_nano/v_p2_seed42/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs_nano/v_p2_seed42/weights/best.onnx imgsz=640 data=${DATA_ROOT}/gc10/data/GC10-DET-yolo/gc10_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=1394.88 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_p2_seed7 (imgsz=640) ----
+  pt_fp32  p50=6.98 ms  p95=7.20 ms  mem=169MB
+  pt_fp16  p50=8.08 ms  p95=8.18 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+YOLOv8n-p2-gc10 summary (fused): 91 layers, 2,922,360 parameters, 0 gradients, 12.2 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs_nano/v_p2_seed7/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 14, 34000) (5.9 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.4s, saved as 'runs_nano/v_p2_seed7/weights/best.onnx' (11.9 MB)
+
+Export complete (1.6s)
+Results saved to [1m${DATA_ROOT}/gc10/runs_nano/v_p2_seed7/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs_nano/v_p2_seed7/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs_nano/v_p2_seed7/weights/best.onnx imgsz=640 data=${DATA_ROOT}/gc10/data/GC10-DET-yolo/gc10_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=1205.12 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_wiou_seed2024 (imgsz=640) ----
+  pt_fp32  p50=5.92 ms  p95=6.03 ms  mem=159MB
+  pt_fp16  p50=6.77 ms  p95=6.99 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+Model summary (fused): 73 layers, 3,007,598 parameters, 0 gradients, 8.1 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs_nano/v_wiou_seed2024/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 14, 8400) (6.0 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.2s, saved as 'runs_nano/v_wiou_seed2024/weights/best.onnx' (11.7 MB)
+
+Export complete (1.3s)
+Results saved to [1m${DATA_ROOT}/gc10/runs_nano/v_wiou_seed2024/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs_nano/v_wiou_seed2024/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs_nano/v_wiou_seed2024/weights/best.onnx imgsz=640 data=${DATA_ROOT}/gc10/data/GC10-DET-yolo/gc10_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=595.98 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_wiou_seed42 (imgsz=640) ----
+  pt_fp32  p50=5.79 ms  p95=7.69 ms  mem=159MB
+  pt_fp16  p50=6.64 ms  p95=8.57 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+Model summary (fused): 73 layers, 3,007,598 parameters, 0 gradients, 8.1 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs_nano/v_wiou_seed42/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 14, 8400) (6.0 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.1s, saved as 'runs_nano/v_wiou_seed42/weights/best.onnx' (11.7 MB)
+
+Export complete (1.2s)
+Results saved to [1m${DATA_ROOT}/gc10/runs_nano/v_wiou_seed42/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs_nano/v_wiou_seed42/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs_nano/v_wiou_seed42/weights/best.onnx imgsz=640 data=${DATA_ROOT}/gc10/data/GC10-DET-yolo/gc10_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=596.15 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_wiou_seed7 (imgsz=640) ----
+  pt_fp32  p50=4.81 ms  p95=4.88 ms  mem=159MB
+  pt_fp16  p50=5.50 ms  p95=5.54 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+Model summary (fused): 73 layers, 3,007,598 parameters, 0 gradients, 8.1 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs_nano/v_wiou_seed7/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 14, 8400) (6.0 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.1s, saved as 'runs_nano/v_wiou_seed7/weights/best.onnx' (11.7 MB)
+
+Export complete (1.2s)
+Results saved to [1m${DATA_ROOT}/gc10/runs_nano/v_wiou_seed7/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs_nano/v_wiou_seed7/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs_nano/v_wiou_seed7/weights/best.onnx imgsz=640 data=${DATA_ROOT}/gc10/data/GC10-DET-yolo/gc10_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=500.77 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+
+汇总: deploy_20260930_gc10_nano/summary.tsv
+提示：延迟要报 p50 与 p95，并写清 batch 与分辨率；不同 batch 之间不可直接比。
+gc10_nano exit=0
+=== [2/4] NEU nano ===
+  [bridge] 6 个自定义类已挂到 __main__
+环境: {"torch": "2.1.2+cu118", "cuda": "11.8", "gpu": "NVIDIA GeForce RTX 4090", "cpu": "CPU(s):                          128\nModel name:                      Intel(R) Xeon(R) Gold 6430", "device_used": "cuda:0", "batch": 1, "iters": 100, "warmup": 20}
+
+待测 15 个 cell，batch=1 iters=100
+
+---- v_base_seed2024 (imgsz=640) ----
+  pt_fp32  p50=5.28 ms  p95=5.36 ms  mem=159MB
+  pt_fp16  p50=4.98 ms  p95=5.05 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+Model summary (fused): 73 layers, 3,006,818 parameters, 0 gradients, 8.1 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs_nano/v_base_seed2024/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 10, 8400) (6.0 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.3s, saved as 'runs_nano/v_base_seed2024/weights/best.onnx' (11.7 MB)
+
+Export complete (1.5s)
+Results saved to [1m${DATA_ROOT}/neu/runs_nano/v_base_seed2024/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs_nano/v_base_seed2024/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs_nano/v_base_seed2024/weights/best.onnx imgsz=640 data=${DATA_ROOT}/neu/data/NEU-DET-split/neu_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=503.93 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_base_seed42 (imgsz=640) ----
+  pt_fp32  p50=5.30 ms  p95=6.20 ms  mem=159MB
+  pt_fp16  p50=5.98 ms  p95=6.03 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+Model summary (fused): 73 layers, 3,006,818 parameters, 0 gradients, 8.1 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs_nano/v_base_seed42/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 10, 8400) (6.0 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.2s, saved as 'runs_nano/v_base_seed42/weights/best.onnx' (11.7 MB)
+
+Export complete (1.4s)
+Results saved to [1m${DATA_ROOT}/neu/runs_nano/v_base_seed42/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs_nano/v_base_seed42/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs_nano/v_base_seed42/weights/best.onnx imgsz=640 data=${DATA_ROOT}/neu/data/NEU-DET-split/neu_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=595.86 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_base_seed7 (imgsz=640) ----
+  pt_fp32  p50=5.41 ms  p95=5.47 ms  mem=159MB
+  pt_fp16  p50=6.08 ms  p95=6.84 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+Model summary (fused): 73 layers, 3,006,818 parameters, 0 gradients, 8.1 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs_nano/v_base_seed7/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 10, 8400) (6.0 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.3s, saved as 'runs_nano/v_base_seed7/weights/best.onnx' (11.7 MB)
+
+Export complete (1.5s)
+Results saved to [1m${DATA_ROOT}/neu/runs_nano/v_base_seed7/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs_nano/v_base_seed7/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs_nano/v_base_seed7/weights/best.onnx imgsz=640 data=${DATA_ROOT}/neu/data/NEU-DET-split/neu_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=501.33 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_dcsa_seed2024 (imgsz=640) ----
+  pt_fp32  p50=7.04 ms  p95=11.19 ms  mem=159MB
+  pt_fp16  p50=7.88 ms  p95=8.42 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+YOLOv8n-neu summary (fused): 103 layers, 3,012,433 parameters, 0 gradients, 8.1 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs_nano/v_dcsa_seed2024/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 10, 8400) (6.0 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.7s, saved as 'runs_nano/v_dcsa_seed2024/weights/best.onnx' (11.7 MB)
+
+Export complete (1.9s)
+Results saved to [1m${DATA_ROOT}/neu/runs_nano/v_dcsa_seed2024/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs_nano/v_dcsa_seed2024/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs_nano/v_dcsa_seed2024/weights/best.onnx imgsz=640 data=${DATA_ROOT}/neu/data/NEU-DET-split/neu_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=696.57 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_dcsa_seed42 (imgsz=640) ----
+  pt_fp32  p50=7.10 ms  p95=7.22 ms  mem=159MB
+  pt_fp16  p50=7.87 ms  p95=10.47 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+YOLOv8n-neu summary (fused): 103 layers, 3,012,433 parameters, 0 gradients, 8.1 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs_nano/v_dcsa_seed42/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 10, 8400) (6.0 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.4s, saved as 'runs_nano/v_dcsa_seed42/weights/best.onnx' (11.7 MB)
+
+Export complete (1.6s)
+Results saved to [1m${DATA_ROOT}/neu/runs_nano/v_dcsa_seed42/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs_nano/v_dcsa_seed42/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs_nano/v_dcsa_seed42/weights/best.onnx imgsz=640 data=${DATA_ROOT}/neu/data/NEU-DET-split/neu_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=593.80 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_dcsa_seed7 (imgsz=640) ----
+  pt_fp32  p50=5.84 ms  p95=8.28 ms  mem=159MB
+  pt_fp16  p50=6.50 ms  p95=6.59 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+YOLOv8n-neu summary (fused): 103 layers, 3,012,433 parameters, 0 gradients, 8.1 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs_nano/v_dcsa_seed7/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 10, 8400) (6.0 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.3s, saved as 'runs_nano/v_dcsa_seed7/weights/best.onnx' (11.7 MB)
+
+Export complete (1.6s)
+Results saved to [1m${DATA_ROOT}/neu/runs_nano/v_dcsa_seed7/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs_nano/v_dcsa_seed7/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs_nano/v_dcsa_seed7/weights/best.onnx imgsz=640 data=${DATA_ROOT}/neu/data/NEU-DET-split/neu_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=695.82 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_full_seed2024 (imgsz=640) ----
+  pt_fp32  p50=8.18 ms  p95=8.47 ms  mem=169MB
+  pt_fp16  p50=9.10 ms  p95=9.75 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+YOLOv8n-p2-neu summary (fused): 121 layers, 2,927,447 parameters, 0 gradients, 12.2 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs_nano/v_full_seed2024/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 10, 34000) (6.0 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.6s, saved as 'runs_nano/v_full_seed2024/weights/best.onnx' (11.9 MB)
+
+Export complete (1.9s)
+Results saved to [1m${DATA_ROOT}/neu/runs_nano/v_full_seed2024/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs_nano/v_full_seed2024/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs_nano/v_full_seed2024/weights/best.onnx imgsz=640 data=${DATA_ROOT}/neu/data/NEU-DET-split/neu_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=1195.05 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_full_seed42 (imgsz=640) ----
+  pt_fp32  p50=8.46 ms  p95=9.68 ms  mem=169MB
+  pt_fp16  p50=9.26 ms  p95=9.42 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+YOLOv8n-p2-neu summary (fused): 121 layers, 2,927,447 parameters, 0 gradients, 12.2 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs_nano/v_full_seed42/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 10, 34000) (6.0 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.7s, saved as 'runs_nano/v_full_seed42/weights/best.onnx' (11.9 MB)
+
+Export complete (1.9s)
+Results saved to [1m${DATA_ROOT}/neu/runs_nano/v_full_seed42/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs_nano/v_full_seed42/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs_nano/v_full_seed42/weights/best.onnx imgsz=640 data=${DATA_ROOT}/neu/data/NEU-DET-split/neu_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=1297.68 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_full_seed7 (imgsz=640) ----
+  pt_fp32  p50=7.40 ms  p95=7.76 ms  mem=169MB
+  pt_fp16  p50=7.78 ms  p95=8.05 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+YOLOv8n-p2-neu summary (fused): 121 layers, 2,927,447 parameters, 0 gradients, 12.2 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs_nano/v_full_seed7/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 10, 34000) (6.0 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.7s, saved as 'runs_nano/v_full_seed7/weights/best.onnx' (11.9 MB)
+
+Export complete (1.9s)
+Results saved to [1m${DATA_ROOT}/neu/runs_nano/v_full_seed7/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs_nano/v_full_seed7/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs_nano/v_full_seed7/weights/best.onnx imgsz=640 data=${DATA_ROOT}/neu/data/NEU-DET-split/neu_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=1195.58 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_p2_seed2024 (imgsz=640) ----
+  pt_fp32  p50=6.70 ms  p95=6.76 ms  mem=169MB
+  pt_fp16  p50=7.60 ms  p95=7.68 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+YOLOv8n-p2-neu summary (fused): 91 layers, 2,921,832 parameters, 0 gradients, 12.2 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs_nano/v_p2_seed2024/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 10, 34000) (6.0 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.4s, saved as 'runs_nano/v_p2_seed2024/weights/best.onnx' (11.9 MB)
+
+Export complete (1.6s)
+Results saved to [1m${DATA_ROOT}/neu/runs_nano/v_p2_seed2024/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs_nano/v_p2_seed2024/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs_nano/v_p2_seed2024/weights/best.onnx imgsz=640 data=${DATA_ROOT}/neu/data/NEU-DET-split/neu_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=1099.63 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_p2_seed42 (imgsz=640) ----
+  pt_fp32  p50=5.58 ms  p95=7.97 ms  mem=169MB
+  pt_fp16  p50=6.28 ms  p95=6.32 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+YOLOv8n-p2-neu summary (fused): 91 layers, 2,921,832 parameters, 0 gradients, 12.2 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs_nano/v_p2_seed42/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 10, 34000) (6.0 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.4s, saved as 'runs_nano/v_p2_seed42/weights/best.onnx' (11.9 MB)
+
+Export complete (1.6s)
+Results saved to [1m${DATA_ROOT}/neu/runs_nano/v_p2_seed42/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs_nano/v_p2_seed42/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs_nano/v_p2_seed42/weights/best.onnx imgsz=640 data=${DATA_ROOT}/neu/data/NEU-DET-split/neu_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=1195.99 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_p2_seed7 (imgsz=640) ----
+  pt_fp32  p50=5.54 ms  p95=5.61 ms  mem=169MB
+  pt_fp16  p50=6.35 ms  p95=6.62 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+YOLOv8n-p2-neu summary (fused): 91 layers, 2,921,832 parameters, 0 gradients, 12.2 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs_nano/v_p2_seed7/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 10, 34000) (6.0 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.3s, saved as 'runs_nano/v_p2_seed7/weights/best.onnx' (11.9 MB)
+
+Export complete (1.5s)
+Results saved to [1m${DATA_ROOT}/neu/runs_nano/v_p2_seed7/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs_nano/v_p2_seed7/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs_nano/v_p2_seed7/weights/best.onnx imgsz=640 data=${DATA_ROOT}/neu/data/NEU-DET-split/neu_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=1001.62 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_wiou_seed2024 (imgsz=640) ----
+  pt_fp32  p50=5.58 ms  p95=99.39 ms  mem=159MB
+  pt_fp16  p50=6.27 ms  p95=9.39 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+Model summary (fused): 73 layers, 3,006,818 parameters, 0 gradients, 8.1 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs_nano/v_wiou_seed2024/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 10, 8400) (6.0 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.3s, saved as 'runs_nano/v_wiou_seed2024/weights/best.onnx' (11.7 MB)
+
+Export complete (1.4s)
+Results saved to [1m${DATA_ROOT}/neu/runs_nano/v_wiou_seed2024/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs_nano/v_wiou_seed2024/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs_nano/v_wiou_seed2024/weights/best.onnx imgsz=640 data=${DATA_ROOT}/neu/data/NEU-DET-split/neu_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=505.93 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_wiou_seed42 (imgsz=640) ----
+  pt_fp32  p50=4.59 ms  p95=4.84 ms  mem=159MB
+  pt_fp16  p50=5.20 ms  p95=5.37 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+Model summary (fused): 73 layers, 3,006,818 parameters, 0 gradients, 8.1 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs_nano/v_wiou_seed42/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 10, 8400) (6.0 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.0s, saved as 'runs_nano/v_wiou_seed42/weights/best.onnx' (11.7 MB)
+
+Export complete (1.1s)
+Results saved to [1m${DATA_ROOT}/neu/runs_nano/v_wiou_seed42/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs_nano/v_wiou_seed42/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs_nano/v_wiou_seed42/weights/best.onnx imgsz=640 data=${DATA_ROOT}/neu/data/NEU-DET-split/neu_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=505.54 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_wiou_seed7 (imgsz=640) ----
+  pt_fp32  p50=4.59 ms  p95=4.63 ms  mem=159MB
+  pt_fp16  p50=5.22 ms  p95=5.28 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+Model summary (fused): 73 layers, 3,006,818 parameters, 0 gradients, 8.1 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs_nano/v_wiou_seed7/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 10, 8400) (6.0 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.0s, saved as 'runs_nano/v_wiou_seed7/weights/best.onnx' (11.7 MB)
+
+Export complete (1.3s)
+Results saved to [1m${DATA_ROOT}/neu/runs_nano/v_wiou_seed7/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs_nano/v_wiou_seed7/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs_nano/v_wiou_seed7/weights/best.onnx imgsz=640 data=${DATA_ROOT}/neu/data/NEU-DET-split/neu_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=599.20 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+
+汇总: deploy_20260930_neu_nano/summary.tsv
+提示：延迟要报 p50 与 p95，并写清 batch 与分辨率；不同 batch 之间不可直接比。
+neu_nano exit=0
+=== [3/4] GC10 s ===
+  [bridge] 6 个自定义类已挂到 __main__
+环境: {"torch": "2.1.2+cu118", "cuda": "11.8", "gpu": "NVIDIA GeForce RTX 4090", "cpu": "CPU(s):                          128\nModel name:                      Intel(R) Xeon(R) Gold 6430", "device_used": "cuda:0", "batch": 1, "iters": 100, "warmup": 20}
+
+待测 45 个 cell，batch=1 iters=100
+
+---- v_base_b8_seed2024 (imgsz=640) ----
+  pt_fp32  p50=4.70 ms  p95=5.31 ms  mem=193MB
+  pt_fp16  p50=5.61 ms  p95=7.16 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+Model summary (fused): 73 layers, 11,129,454 parameters, 0 gradients, 28.5 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_base_b8_seed2024/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 14, 8400) (21.5 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.6s, saved as 'runs/v_base_b8_seed2024/weights/best.onnx' (42.7 MB)
+
+Export complete (1.8s)
+Results saved to [1m${DATA_ROOT}/gc10/runs/v_base_b8_seed2024/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_base_b8_seed2024/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs/v_base_b8_seed2024/weights/best.onnx imgsz=640 data=${DATA_ROOT}/gc10/data/GC10-DET-yolo/gc10_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=893.84 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_base_b8_seed42 (imgsz=640) ----
+  pt_fp32  p50=4.94 ms  p95=5.04 ms  mem=193MB
+  pt_fp16  p50=5.70 ms  p95=5.80 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+Model summary (fused): 73 layers, 11,129,454 parameters, 0 gradients, 28.5 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_base_b8_seed42/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 14, 8400) (21.5 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.4s, saved as 'runs/v_base_b8_seed42/weights/best.onnx' (42.7 MB)
+
+Export complete (1.6s)
+Results saved to [1m${DATA_ROOT}/gc10/runs/v_base_b8_seed42/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_base_b8_seed42/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs/v_base_b8_seed42/weights/best.onnx imgsz=640 data=${DATA_ROOT}/gc10/data/GC10-DET-yolo/gc10_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=795.72 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_base_b8_seed7 (imgsz=640) ----
+  pt_fp32  p50=4.94 ms  p95=5.02 ms  mem=193MB
+  pt_fp16  p50=5.62 ms  p95=5.96 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+Model summary (fused): 73 layers, 11,129,454 parameters, 0 gradients, 28.5 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_base_b8_seed7/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 14, 8400) (21.5 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.3s, saved as 'runs/v_base_b8_seed7/weights/best.onnx' (42.7 MB)
+
+Export complete (1.5s)
+Results saved to [1m${DATA_ROOT}/gc10/runs/v_base_b8_seed7/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_base_b8_seed7/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs/v_base_b8_seed7/weights/best.onnx imgsz=640 data=${DATA_ROOT}/gc10/data/GC10-DET-yolo/gc10_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=799.74 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_base_e300_seed2024 (imgsz=640) ----
+  pt_fp32  p50=5.82 ms  p95=5.87 ms  mem=193MB
+  pt_fp16  p50=6.71 ms  p95=9.06 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+Model summary (fused): 73 layers, 11,129,454 parameters, 0 gradients, 28.5 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_base_e300_seed2024/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 14, 8400) (21.5 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.4s, saved as 'runs/v_base_e300_seed2024/weights/best.onnx' (42.7 MB)
+
+Export complete (1.6s)
+Results saved to [1m${DATA_ROOT}/gc10/runs/v_base_e300_seed2024/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_base_e300_seed2024/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs/v_base_e300_seed2024/weights/best.onnx imgsz=640 data=${DATA_ROOT}/gc10/data/GC10-DET-yolo/gc10_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=903.14 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_base_e300_seed42 (imgsz=640) ----
+  pt_fp32  p50=5.00 ms  p95=5.04 ms  mem=193MB
+  pt_fp16  p50=5.74 ms  p95=5.79 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+Model summary (fused): 73 layers, 11,129,454 parameters, 0 gradients, 28.5 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_base_e300_seed42/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 14, 8400) (21.5 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.5s, saved as 'runs/v_base_e300_seed42/weights/best.onnx' (42.7 MB)
+
+Export complete (1.7s)
+Results saved to [1m${DATA_ROOT}/gc10/runs/v_base_e300_seed42/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_base_e300_seed42/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs/v_base_e300_seed42/weights/best.onnx imgsz=640 data=${DATA_ROOT}/gc10/data/GC10-DET-yolo/gc10_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=707.80 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_base_e300_seed7 (imgsz=640) ----
+  pt_fp32  p50=5.03 ms  p95=5.14 ms  mem=193MB
+  pt_fp16  p50=5.82 ms  p95=5.93 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+Model summary (fused): 73 layers, 11,129,454 parameters, 0 gradients, 28.5 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_base_e300_seed7/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 14, 8400) (21.5 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.3s, saved as 'runs/v_base_e300_seed7/weights/best.onnx' (42.7 MB)
+
+Export complete (1.6s)
+Results saved to [1m${DATA_ROOT}/gc10/runs/v_base_e300_seed7/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_base_e300_seed7/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs/v_base_e300_seed7/weights/best.onnx imgsz=640 data=${DATA_ROOT}/gc10/data/GC10-DET-yolo/gc10_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=701.50 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_base_s320_b8_seed2024 (imgsz=320) ----
+  pt_fp32  p50=4.97 ms  p95=5.04 ms  mem=180MB
+  pt_fp16  p50=5.72 ms  p95=5.81 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+Model summary (fused): 73 layers, 11,129,454 parameters, 0 gradients, 7.1 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_base_s320_b8_seed2024/weights/best.pt' with input shape (1, 3, 320, 320) BCHW and output shape(s) (1, 14, 2100) (21.5 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.2s, saved as 'runs/v_base_s320_b8_seed2024/weights/best.onnx' (42.6 MB)
+
+Export complete (1.3s)
+Results saved to [1m${DATA_ROOT}/gc10/runs/v_base_s320_b8_seed2024/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_base_s320_b8_seed2024/weights/best.onnx imgsz=320 
+Validate:        yolo val task=detect model=runs/v_base_s320_b8_seed2024/weights/best.onnx imgsz=320 data=${DATA_ROOT}/gc10/data/GC10-DET-yolo/gc10_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=301.19 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_base_s320_b8_seed42 (imgsz=320) ----
+  pt_fp32  p50=5.03 ms  p95=6.06 ms  mem=180MB
+  pt_fp16  p50=5.65 ms  p95=5.88 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+Model summary (fused): 73 layers, 11,129,454 parameters, 0 gradients, 7.1 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_base_s320_b8_seed42/weights/best.pt' with input shape (1, 3, 320, 320) BCHW and output shape(s) (1, 14, 2100) (21.5 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.3s, saved as 'runs/v_base_s320_b8_seed42/weights/best.onnx' (42.6 MB)
+
+Export complete (1.6s)
+Results saved to [1m${DATA_ROOT}/gc10/runs/v_base_s320_b8_seed42/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_base_s320_b8_seed42/weights/best.onnx imgsz=320 
+Validate:        yolo val task=detect model=runs/v_base_s320_b8_seed42/weights/best.onnx imgsz=320 data=${DATA_ROOT}/gc10/data/GC10-DET-yolo/gc10_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=400.48 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_base_s320_b8_seed7 (imgsz=320) ----
+  pt_fp32  p50=5.13 ms  p95=7.62 ms  mem=180MB
+  pt_fp16  p50=5.81 ms  p95=6.40 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+Model summary (fused): 73 layers, 11,129,454 parameters, 0 gradients, 7.1 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_base_s320_b8_seed7/weights/best.pt' with input shape (1, 3, 320, 320) BCHW and output shape(s) (1, 14, 2100) (21.5 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.4s, saved as 'runs/v_base_s320_b8_seed7/weights/best.onnx' (42.6 MB)
+
+Export complete (1.5s)
+Results saved to [1m${DATA_ROOT}/gc10/runs/v_base_s320_b8_seed7/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_base_s320_b8_seed7/weights/best.onnx imgsz=320 
+Validate:        yolo val task=detect model=runs/v_base_s320_b8_seed7/weights/best.onnx imgsz=320 data=${DATA_ROOT}/gc10/data/GC10-DET-yolo/gc10_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=407.72 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_base_s960_b8_seed2024 (imgsz=960) ----
+  pt_fp32  p50=5.06 ms  p95=5.32 ms  mem=253MB
+  pt_fp16  p50=5.82 ms  p95=6.10 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+Model summary (fused): 73 layers, 11,129,454 parameters, 0 gradients, 64.0 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_base_s960_b8_seed2024/weights/best.pt' with input shape (1, 3, 960, 960) BCHW and output shape(s) (1, 14, 18900) (21.5 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.5s, saved as 'runs/v_base_s960_b8_seed2024/weights/best.onnx' (42.9 MB)
+
+Export complete (1.9s)
+Results saved to [1m${DATA_ROOT}/gc10/runs/v_base_s960_b8_seed2024/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_base_s960_b8_seed2024/weights/best.onnx imgsz=960 
+Validate:        yolo val task=detect model=runs/v_base_s960_b8_seed2024/weights/best.onnx imgsz=960 data=${DATA_ROOT}/gc10/data/GC10-DET-yolo/gc10_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=1496.79 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_base_s960_b8_seed42 (imgsz=960) ----
+  pt_fp32  p50=6.21 ms  p95=6.38 ms  mem=253MB
+  pt_fp16  p50=7.01 ms  p95=7.13 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+Model summary (fused): 73 layers, 11,129,454 parameters, 0 gradients, 64.0 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_base_s960_b8_seed42/weights/best.pt' with input shape (1, 3, 960, 960) BCHW and output shape(s) (1, 14, 18900) (21.5 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.4s, saved as 'runs/v_base_s960_b8_seed42/weights/best.onnx' (42.9 MB)
+
+Export complete (1.8s)
+Results saved to [1m${DATA_ROOT}/gc10/runs/v_base_s960_b8_seed42/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_base_s960_b8_seed42/weights/best.onnx imgsz=960 
+Validate:        yolo val task=detect model=runs/v_base_s960_b8_seed42/weights/best.onnx imgsz=960 data=${DATA_ROOT}/gc10/data/GC10-DET-yolo/gc10_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=1596.02 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_base_s960_b8_seed7 (imgsz=960) ----
+  pt_fp32  p50=4.84 ms  p95=4.93 ms  mem=253MB
+  pt_fp16  p50=5.42 ms  p95=5.90 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+Model summary (fused): 73 layers, 11,129,454 parameters, 0 gradients, 64.0 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_base_s960_b8_seed7/weights/best.pt' with input shape (1, 3, 960, 960) BCHW and output shape(s) (1, 14, 18900) (21.5 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.6s, saved as 'runs/v_base_s960_b8_seed7/weights/best.onnx' (42.9 MB)
+
+Export complete (2.0s)
+Results saved to [1m${DATA_ROOT}/gc10/runs/v_base_s960_b8_seed7/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_base_s960_b8_seed7/weights/best.onnx imgsz=960 
+Validate:        yolo val task=detect model=runs/v_base_s960_b8_seed7/weights/best.onnx imgsz=960 data=${DATA_ROOT}/gc10/data/GC10-DET-yolo/gc10_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=1402.17 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_base_seed2024 (imgsz=640) ----
+  pt_fp32  p50=5.23 ms  p95=5.31 ms  mem=193MB
+  pt_fp16  p50=6.00 ms  p95=6.08 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+Model summary (fused): 73 layers, 11,129,454 parameters, 0 gradients, 28.5 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_base_seed2024/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 14, 8400) (21.5 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.5s, saved as 'runs/v_base_seed2024/weights/best.onnx' (42.7 MB)
+
+Export complete (1.7s)
+Results saved to [1m${DATA_ROOT}/gc10/runs/v_base_seed2024/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_base_seed2024/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs/v_base_seed2024/weights/best.onnx imgsz=640 data=${DATA_ROOT}/gc10/data/GC10-DET-yolo/gc10_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=897.19 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_base_seed42 (imgsz=640) ----
+  pt_fp32  p50=5.15 ms  p95=5.76 ms  mem=193MB
+  pt_fp16  p50=5.95 ms  p95=6.83 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+Model summary (fused): 73 layers, 11,129,454 parameters, 0 gradients, 28.5 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_base_seed42/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 14, 8400) (21.5 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.6s, saved as 'runs/v_base_seed42/weights/best.onnx' (42.7 MB)
+
+Export complete (1.9s)
+Results saved to [1m${DATA_ROOT}/gc10/runs/v_base_seed42/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_base_seed42/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs/v_base_seed42/weights/best.onnx imgsz=640 data=${DATA_ROOT}/gc10/data/GC10-DET-yolo/gc10_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=962.43 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_base_seed7 (imgsz=640) ----
+  pt_fp32  p50=6.23 ms  p95=6.30 ms  mem=193MB
+  pt_fp16  p50=5.63 ms  p95=9.22 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+Model summary (fused): 73 layers, 11,129,454 parameters, 0 gradients, 28.5 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_base_seed7/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 14, 8400) (21.5 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.3s, saved as 'runs/v_base_seed7/weights/best.onnx' (42.7 MB)
+
+Export complete (1.6s)
+Results saved to [1m${DATA_ROOT}/gc10/runs/v_base_seed7/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_base_seed7/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs/v_base_seed7/weights/best.onnx imgsz=640 data=${DATA_ROOT}/gc10/data/GC10-DET-yolo/gc10_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=800.76 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_dcsa_seed2024 (imgsz=640) ----
+  pt_fp32  p50=6.84 ms  p95=8.80 ms  mem=193MB
+  pt_fp16  p50=7.53 ms  p95=8.33 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+YOLOv8s-gc10 summary (fused): 103 layers, 11,144,285 parameters, 0 gradients, 28.5 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_dcsa_seed2024/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 14, 8400) (21.5 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.9s, saved as 'runs/v_dcsa_seed2024/weights/best.onnx' (42.8 MB)
+
+Export complete (2.2s)
+Results saved to [1m${DATA_ROOT}/gc10/runs/v_dcsa_seed2024/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_dcsa_seed2024/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs/v_dcsa_seed2024/weights/best.onnx imgsz=640 data=${DATA_ROOT}/gc10/data/GC10-DET-yolo/gc10_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=1097.63 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_dcsa_seed42 (imgsz=640) ----
+  pt_fp32  p50=6.43 ms  p95=9.11 ms  mem=193MB
+  pt_fp16  p50=7.58 ms  p95=7.73 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+YOLOv8s-gc10 summary (fused): 103 layers, 11,144,285 parameters, 0 gradients, 28.5 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_dcsa_seed42/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 14, 8400) (21.5 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 2.0s, saved as 'runs/v_dcsa_seed42/weights/best.onnx' (42.8 MB)
+
+Export complete (2.3s)
+Results saved to [1m${DATA_ROOT}/gc10/runs/v_dcsa_seed42/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_dcsa_seed42/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs/v_dcsa_seed42/weights/best.onnx imgsz=640 data=${DATA_ROOT}/gc10/data/GC10-DET-yolo/gc10_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=802.80 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_dcsa_seed7 (imgsz=640) ----
+  pt_fp32  p50=6.80 ms  p95=7.47 ms  mem=193MB
+  pt_fp16  p50=7.49 ms  p95=8.17 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+YOLOv8s-gc10 summary (fused): 103 layers, 11,144,285 parameters, 0 gradients, 28.5 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_dcsa_seed7/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 14, 8400) (21.5 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.8s, saved as 'runs/v_dcsa_seed7/weights/best.onnx' (42.8 MB)
+
+Export complete (2.1s)
+Results saved to [1m${DATA_ROOT}/gc10/runs/v_dcsa_seed7/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_dcsa_seed7/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs/v_dcsa_seed7/weights/best.onnx imgsz=640 data=${DATA_ROOT}/gc10/data/GC10-DET-yolo/gc10_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=1005.48 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_focal_seed2024 (imgsz=640) ----
+  pt_fp32  p50=8.96 ms  p95=9.51 ms  mem=220MB
+  pt_fp16  p50=9.86 ms  p95=9.90 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+YOLOv8s-p2-gc10 summary (fused): 121 layers, 10,643,879 parameters, 0 gradients, 36.7 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_focal_seed2024/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 14, 34000) (20.7 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 2.0s, saved as 'runs/v_focal_seed2024/weights/best.onnx' (41.4 MB)
+
+Export complete (2.3s)
+Results saved to [1m${DATA_ROOT}/gc10/runs/v_focal_seed2024/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_focal_seed2024/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs/v_focal_seed2024/weights/best.onnx imgsz=640 data=${DATA_ROOT}/gc10/data/GC10-DET-yolo/gc10_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=1803.37 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_focal_seed42 (imgsz=640) ----
+  pt_fp32  p50=9.25 ms  p95=13.78 ms  mem=220MB
+  pt_fp16  p50=10.06 ms  p95=15.36 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+YOLOv8s-p2-gc10 summary (fused): 121 layers, 10,643,879 parameters, 0 gradients, 36.7 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_focal_seed42/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 14, 34000) (20.7 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 2.1s, saved as 'runs/v_focal_seed42/weights/best.onnx' (41.4 MB)
+
+Export complete (2.5s)
+Results saved to [1m${DATA_ROOT}/gc10/runs/v_focal_seed42/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_focal_seed42/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs/v_focal_seed42/weights/best.onnx imgsz=640 data=${DATA_ROOT}/gc10/data/GC10-DET-yolo/gc10_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=1496.20 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_focal_seed7 (imgsz=640) ----
+  pt_fp32  p50=7.44 ms  p95=7.68 ms  mem=220MB
+  pt_fp16  p50=8.21 ms  p95=8.43 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+YOLOv8s-p2-gc10 summary (fused): 121 layers, 10,643,879 parameters, 0 gradients, 36.7 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_focal_seed7/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 14, 34000) (20.7 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 2.1s, saved as 'runs/v_focal_seed7/weights/best.onnx' (41.4 MB)
+
+Export complete (2.4s)
+Results saved to [1m${DATA_ROOT}/gc10/runs/v_focal_seed7/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_focal_seed7/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs/v_focal_seed7/weights/best.onnx imgsz=640 data=${DATA_ROOT}/gc10/data/GC10-DET-yolo/gc10_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=1500.98 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_full_cpw0p5_seed2024 (imgsz=640) ----
+  pt_fp32  p50=9.76 ms  p95=13.71 ms  mem=220MB
+  pt_fp16  p50=8.62 ms  p95=10.84 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+YOLOv8s-p2-gc10 summary (fused): 121 layers, 10,643,879 parameters, 0 gradients, 36.7 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_full_cpw0p5_seed2024/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 14, 34000) (20.7 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 2.2s, saved as 'runs/v_full_cpw0p5_seed2024/weights/best.onnx' (41.4 MB)
+
+Export complete (2.5s)
+Results saved to [1m${DATA_ROOT}/gc10/runs/v_full_cpw0p5_seed2024/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_full_cpw0p5_seed2024/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs/v_full_cpw0p5_seed2024/weights/best.onnx imgsz=640 data=${DATA_ROOT}/gc10/data/GC10-DET-yolo/gc10_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=1408.59 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_full_cpw0p5_seed42 (imgsz=640) ----
+  pt_fp32  p50=7.66 ms  p95=7.72 ms  mem=220MB
+  pt_fp16  p50=8.33 ms  p95=8.47 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+YOLOv8s-p2-gc10 summary (fused): 121 layers, 10,643,879 parameters, 0 gradients, 36.7 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_full_cpw0p5_seed42/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 14, 34000) (20.7 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 2.1s, saved as 'runs/v_full_cpw0p5_seed42/weights/best.onnx' (41.4 MB)
+
+Export complete (2.3s)
+Results saved to [1m${DATA_ROOT}/gc10/runs/v_full_cpw0p5_seed42/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_full_cpw0p5_seed42/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs/v_full_cpw0p5_seed42/weights/best.onnx imgsz=640 data=${DATA_ROOT}/gc10/data/GC10-DET-yolo/gc10_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=1493.79 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_full_cpw0p5_seed7 (imgsz=640) ----
+  pt_fp32  p50=7.49 ms  p95=12.10 ms  mem=220MB
+  pt_fp16  p50=8.29 ms  p95=11.53 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+YOLOv8s-p2-gc10 summary (fused): 121 layers, 10,643,879 parameters, 0 gradients, 36.7 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_full_cpw0p5_seed7/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 14, 34000) (20.7 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 2.2s, saved as 'runs/v_full_cpw0p5_seed7/weights/best.onnx' (41.4 MB)
+
+Export complete (2.5s)
+Results saved to [1m${DATA_ROOT}/gc10/runs/v_full_cpw0p5_seed7/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_full_cpw0p5_seed7/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs/v_full_cpw0p5_seed7/weights/best.onnx imgsz=640 data=${DATA_ROOT}/gc10/data/GC10-DET-yolo/gc10_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=1496.12 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_full_e300_seed2024 (imgsz=640) ----
+  pt_fp32  p50=7.64 ms  p95=7.82 ms  mem=220MB
+  pt_fp16  p50=8.39 ms  p95=8.50 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+YOLOv8s-p2-gc10 summary (fused): 121 layers, 10,643,879 parameters, 0 gradients, 36.7 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_full_e300_seed2024/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 14, 34000) (20.7 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 2.1s, saved as 'runs/v_full_e300_seed2024/weights/best.onnx' (41.4 MB)
+
+Export complete (2.4s)
+Results saved to [1m${DATA_ROOT}/gc10/runs/v_full_e300_seed2024/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_full_e300_seed2024/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs/v_full_e300_seed2024/weights/best.onnx imgsz=640 data=${DATA_ROOT}/gc10/data/GC10-DET-yolo/gc10_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=1692.89 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_full_e300_seed42 (imgsz=640) ----
+  pt_fp32  p50=7.75 ms  p95=8.98 ms  mem=220MB
+  pt_fp16  p50=8.31 ms  p95=12.91 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+YOLOv8s-p2-gc10 summary (fused): 121 layers, 10,643,879 parameters, 0 gradients, 36.7 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_full_e300_seed42/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 14, 34000) (20.7 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 2.2s, saved as 'runs/v_full_e300_seed42/weights/best.onnx' (41.4 MB)
+
+Export complete (2.5s)
+Results saved to [1m${DATA_ROOT}/gc10/runs/v_full_e300_seed42/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_full_e300_seed42/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs/v_full_e300_seed42/weights/best.onnx imgsz=640 data=${DATA_ROOT}/gc10/data/GC10-DET-yolo/gc10_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=1599.83 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_full_e300_seed7 (imgsz=640) ----
+  pt_fp32  p50=8.16 ms  p95=8.41 ms  mem=220MB
+  pt_fp16  p50=9.06 ms  p95=13.07 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+YOLOv8s-p2-gc10 summary (fused): 121 layers, 10,643,879 parameters, 0 gradients, 36.7 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_full_e300_seed7/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 14, 34000) (20.7 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 2.0s, saved as 'runs/v_full_e300_seed7/weights/best.onnx' (41.4 MB)
+
+Export complete (2.4s)
+Results saved to [1m${DATA_ROOT}/gc10/runs/v_full_e300_seed7/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_full_e300_seed7/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs/v_full_e300_seed7/weights/best.onnx imgsz=640 data=${DATA_ROOT}/gc10/data/GC10-DET-yolo/gc10_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=1596.53 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_full_seed2024 (imgsz=640) ----
+  pt_fp32  p50=7.57 ms  p95=10.77 ms  mem=220MB
+  pt_fp16  p50=8.26 ms  p95=12.72 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+YOLOv8s-p2-gc10 summary (fused): 121 layers, 10,643,879 parameters, 0 gradients, 36.7 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_full_seed2024/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 14, 34000) (20.7 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 2.2s, saved as 'runs/v_full_seed2024/weights/best.onnx' (41.4 MB)
+
+Export complete (2.5s)
+Results saved to [1m${DATA_ROOT}/gc10/runs/v_full_seed2024/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_full_seed2024/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs/v_full_seed2024/weights/best.onnx imgsz=640 data=${DATA_ROOT}/gc10/data/GC10-DET-yolo/gc10_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=2196.88 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_full_seed42 (imgsz=640) ----
+  pt_fp32  p50=7.49 ms  p95=7.58 ms  mem=220MB
+  pt_fp16  p50=8.29 ms  p95=8.35 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+YOLOv8s-p2-gc10 summary (fused): 121 layers, 10,643,879 parameters, 0 gradients, 36.7 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_full_seed42/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 14, 34000) (20.7 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 2.1s, saved as 'runs/v_full_seed42/weights/best.onnx' (41.4 MB)
+
+Export complete (2.4s)
+Results saved to [1m${DATA_ROOT}/gc10/runs/v_full_seed42/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_full_seed42/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs/v_full_seed42/weights/best.onnx imgsz=640 data=${DATA_ROOT}/gc10/data/GC10-DET-yolo/gc10_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=1696.84 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_full_seed7 (imgsz=640) ----
+  pt_fp32  p50=7.57 ms  p95=7.67 ms  mem=220MB
+  pt_fp16  p50=8.37 ms  p95=8.41 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+YOLOv8s-p2-gc10 summary (fused): 121 layers, 10,643,879 parameters, 0 gradients, 36.7 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_full_seed7/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 14, 34000) (20.7 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 2.1s, saved as 'runs/v_full_seed7/weights/best.onnx' (41.4 MB)
+
+Export complete (2.4s)
+Results saved to [1m${DATA_ROOT}/gc10/runs/v_full_seed7/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_full_seed7/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs/v_full_seed7/weights/best.onnx imgsz=640 data=${DATA_ROOT}/gc10/data/GC10-DET-yolo/gc10_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=1498.01 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_p1_b8_seed2024 (imgsz=640) ----
+  pt_fp32  p50=6.45 ms  p95=6.58 ms  mem=240MB
+  pt_fp16  p50=7.29 ms  p95=7.35 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+YOLOv8s-p1-gc10 summary (fused): 80 layers, 10,016,600 parameters, 0 gradients, 39.9 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_p1_b8_seed2024/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 14, 110800) (19.7 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.5s, saved as 'runs/v_p1_b8_seed2024/weights/best.onnx' (40.4 MB)
+
+Export complete (1.9s)
+Results saved to [1m${DATA_ROOT}/gc10/runs/v_p1_b8_seed2024/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_p1_b8_seed2024/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs/v_p1_b8_seed2024/weights/best.onnx imgsz=640 data=${DATA_ROOT}/gc10/data/GC10-DET-yolo/gc10_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=2698.13 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_p1_b8_seed42 (imgsz=640) ----
+  pt_fp32  p50=5.42 ms  p95=5.79 ms  mem=240MB
+  pt_fp16  p50=6.04 ms  p95=6.18 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+YOLOv8s-p1-gc10 summary (fused): 80 layers, 10,016,600 parameters, 0 gradients, 39.9 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_p1_b8_seed42/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 14, 110800) (19.7 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.5s, saved as 'runs/v_p1_b8_seed42/weights/best.onnx' (40.4 MB)
+
+Export complete (1.9s)
+Results saved to [1m${DATA_ROOT}/gc10/runs/v_p1_b8_seed42/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_p1_b8_seed42/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs/v_p1_b8_seed42/weights/best.onnx imgsz=640 data=${DATA_ROOT}/gc10/data/GC10-DET-yolo/gc10_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=2591.49 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_p1_b8_seed7 (imgsz=640) ----
+  pt_fp32  p50=5.56 ms  p95=8.11 ms  mem=240MB
+  pt_fp16  p50=6.27 ms  p95=6.72 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+YOLOv8s-p1-gc10 summary (fused): 80 layers, 10,016,600 parameters, 0 gradients, 39.9 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_p1_b8_seed7/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 14, 110800) (19.7 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.4s, saved as 'runs/v_p1_b8_seed7/weights/best.onnx' (40.4 MB)
+
+Export complete (1.8s)
+Results saved to [1m${DATA_ROOT}/gc10/runs/v_p1_b8_seed7/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_p1_b8_seed7/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs/v_p1_b8_seed7/weights/best.onnx imgsz=640 data=${DATA_ROOT}/gc10/data/GC10-DET-yolo/gc10_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=2597.09 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_p2_seed2024 (imgsz=640) ----
+  pt_fp32  p50=6.56 ms  p95=6.76 ms  mem=220MB
+  pt_fp16  p50=7.43 ms  p95=7.61 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+YOLOv8s-p2-gc10 summary (fused): 91 layers, 10,629,048 parameters, 0 gradients, 36.7 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_p2_seed2024/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 14, 34000) (20.6 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.6s, saved as 'runs/v_p2_seed2024/weights/best.onnx' (41.3 MB)
+
+Export complete (2.2s)
+Results saved to [1m${DATA_ROOT}/gc10/runs/v_p2_seed2024/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_p2_seed2024/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs/v_p2_seed2024/weights/best.onnx imgsz=640 data=${DATA_ROOT}/gc10/data/GC10-DET-yolo/gc10_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=1401.67 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_p2_seed42 (imgsz=640) ----
+  pt_fp32  p50=6.17 ms  p95=6.47 ms  mem=220MB
+  pt_fp16  p50=6.96 ms  p95=7.02 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+YOLOv8s-p2-gc10 summary (fused): 91 layers, 10,629,048 parameters, 0 gradients, 36.7 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_p2_seed42/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 14, 34000) (20.6 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.6s, saved as 'runs/v_p2_seed42/weights/best.onnx' (41.3 MB)
+
+Export complete (2.1s)
+Results saved to [1m${DATA_ROOT}/gc10/runs/v_p2_seed42/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_p2_seed42/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs/v_p2_seed42/weights/best.onnx imgsz=640 data=${DATA_ROOT}/gc10/data/GC10-DET-yolo/gc10_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=1602.61 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_p2_seed7 (imgsz=640) ----
+  pt_fp32  p50=6.41 ms  p95=83.97 ms  mem=220MB
+  pt_fp16  p50=7.36 ms  p95=7.46 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+YOLOv8s-p2-gc10 summary (fused): 91 layers, 10,629,048 parameters, 0 gradients, 36.7 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_p2_seed7/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 14, 34000) (20.6 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.7s, saved as 'runs/v_p2_seed7/weights/best.onnx' (41.3 MB)
+
+Export complete (2.2s)
+Results saved to [1m${DATA_ROOT}/gc10/runs/v_p2_seed7/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_p2_seed7/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs/v_p2_seed7/weights/best.onnx imgsz=640 data=${DATA_ROOT}/gc10/data/GC10-DET-yolo/gc10_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=1598.26 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_p2dcsawiou_seed2024 (imgsz=640) ----
+  pt_fp32  p50=7.77 ms  p95=11.64 ms  mem=220MB
+  pt_fp16  p50=8.52 ms  p95=13.13 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+YOLOv8s-p2-gc10 summary (fused): 121 layers, 10,643,879 parameters, 0 gradients, 36.7 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_p2dcsawiou_seed2024/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 14, 34000) (20.7 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 2.4s, saved as 'runs/v_p2dcsawiou_seed2024/weights/best.onnx' (41.4 MB)
+
+Export complete (2.7s)
+Results saved to [1m${DATA_ROOT}/gc10/runs/v_p2dcsawiou_seed2024/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_p2dcsawiou_seed2024/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs/v_p2dcsawiou_seed2024/weights/best.onnx imgsz=640 data=${DATA_ROOT}/gc10/data/GC10-DET-yolo/gc10_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=1301.10 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_p2dcsawiou_seed42 (imgsz=640) ----
+  pt_fp32  p50=8.05 ms  p95=8.11 ms  mem=220MB
+  pt_fp16  p50=9.02 ms  p95=9.08 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+YOLOv8s-p2-gc10 summary (fused): 121 layers, 10,643,879 parameters, 0 gradients, 36.7 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_p2dcsawiou_seed42/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 14, 34000) (20.7 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 2.3s, saved as 'runs/v_p2dcsawiou_seed42/weights/best.onnx' (41.4 MB)
+
+Export complete (2.8s)
+Results saved to [1m${DATA_ROOT}/gc10/runs/v_p2dcsawiou_seed42/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_p2dcsawiou_seed42/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs/v_p2dcsawiou_seed42/weights/best.onnx imgsz=640 data=${DATA_ROOT}/gc10/data/GC10-DET-yolo/gc10_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=1509.22 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_p2dcsawiou_seed7 (imgsz=640) ----
+  pt_fp32  p50=9.83 ms  p95=12.82 ms  mem=220MB
+  pt_fp16  p50=10.85 ms  p95=15.16 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+YOLOv8s-p2-gc10 summary (fused): 121 layers, 10,643,879 parameters, 0 gradients, 36.7 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_p2dcsawiou_seed7/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 14, 34000) (20.7 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 2.3s, saved as 'runs/v_p2dcsawiou_seed7/weights/best.onnx' (41.4 MB)
+
+Export complete (2.7s)
+Results saved to [1m${DATA_ROOT}/gc10/runs/v_p2dcsawiou_seed7/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_p2dcsawiou_seed7/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs/v_p2dcsawiou_seed7/weights/best.onnx imgsz=640 data=${DATA_ROOT}/gc10/data/GC10-DET-yolo/gc10_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=1404.39 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_resample_seed2024 (imgsz=640) ----
+  pt_fp32  p50=8.13 ms  p95=8.58 ms  mem=220MB
+  pt_fp16  p50=9.06 ms  p95=9.30 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+YOLOv8s-p2-gc10 summary (fused): 121 layers, 10,643,879 parameters, 0 gradients, 36.7 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_resample_seed2024/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 14, 34000) (20.7 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 2.2s, saved as 'runs/v_resample_seed2024/weights/best.onnx' (41.4 MB)
+
+Export complete (2.5s)
+Results saved to [1m${DATA_ROOT}/gc10/runs/v_resample_seed2024/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_resample_seed2024/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs/v_resample_seed2024/weights/best.onnx imgsz=640 data=${DATA_ROOT}/gc10/data/GC10-DET-yolo/gc10_det_resampled.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=1501.43 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_resample_seed42 (imgsz=640) ----
+  pt_fp32  p50=8.20 ms  p95=11.07 ms  mem=220MB
+  pt_fp16  p50=9.11 ms  p95=12.66 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+YOLOv8s-p2-gc10 summary (fused): 121 layers, 10,643,879 parameters, 0 gradients, 36.7 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_resample_seed42/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 14, 34000) (20.7 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 2.6s, saved as 'runs/v_resample_seed42/weights/best.onnx' (41.4 MB)
+
+Export complete (2.9s)
+Results saved to [1m${DATA_ROOT}/gc10/runs/v_resample_seed42/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_resample_seed42/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs/v_resample_seed42/weights/best.onnx imgsz=640 data=${DATA_ROOT}/gc10/data/GC10-DET-yolo/gc10_det_resampled.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=1697.67 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_resample_seed7 (imgsz=640) ----
+  pt_fp32  p50=8.16 ms  p95=8.21 ms  mem=220MB
+  pt_fp16  p50=9.12 ms  p95=13.84 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+YOLOv8s-p2-gc10 summary (fused): 121 layers, 10,643,879 parameters, 0 gradients, 36.7 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_resample_seed7/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 14, 34000) (20.7 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 2.1s, saved as 'runs/v_resample_seed7/weights/best.onnx' (41.4 MB)
+
+Export complete (2.6s)
+Results saved to [1m${DATA_ROOT}/gc10/runs/v_resample_seed7/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_resample_seed7/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs/v_resample_seed7/weights/best.onnx imgsz=640 data=${DATA_ROOT}/gc10/data/GC10-DET-yolo/gc10_det_resampled.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=1505.26 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_wiou_seed2024 (imgsz=640) ----
+  pt_fp32  p50=5.41 ms  p95=7.61 ms  mem=193MB
+  pt_fp16  p50=6.12 ms  p95=7.55 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+Model summary (fused): 73 layers, 11,129,454 parameters, 0 gradients, 28.5 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_wiou_seed2024/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 14, 8400) (21.5 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.4s, saved as 'runs/v_wiou_seed2024/weights/best.onnx' (42.7 MB)
+
+Export complete (1.6s)
+Results saved to [1m${DATA_ROOT}/gc10/runs/v_wiou_seed2024/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_wiou_seed2024/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs/v_wiou_seed2024/weights/best.onnx imgsz=640 data=${DATA_ROOT}/gc10/data/GC10-DET-yolo/gc10_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=795.13 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_wiou_seed42 (imgsz=640) ----
+  pt_fp32  p50=5.31 ms  p95=5.41 ms  mem=193MB
+  pt_fp16  p50=6.10 ms  p95=6.16 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+Model summary (fused): 73 layers, 11,129,454 parameters, 0 gradients, 28.5 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_wiou_seed42/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 14, 8400) (21.5 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.5s, saved as 'runs/v_wiou_seed42/weights/best.onnx' (42.7 MB)
+
+Export complete (1.7s)
+Results saved to [1m${DATA_ROOT}/gc10/runs/v_wiou_seed42/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_wiou_seed42/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs/v_wiou_seed42/weights/best.onnx imgsz=640 data=${DATA_ROOT}/gc10/data/GC10-DET-yolo/gc10_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=697.16 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_wiou_seed7 (imgsz=640) ----
+  pt_fp32  p50=5.38 ms  p95=97.99 ms  mem=193MB
+  pt_fp16  p50=6.13 ms  p95=6.21 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+Model summary (fused): 73 layers, 11,129,454 parameters, 0 gradients, 28.5 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_wiou_seed7/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 14, 8400) (21.5 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.5s, saved as 'runs/v_wiou_seed7/weights/best.onnx' (42.7 MB)
+
+Export complete (1.8s)
+Results saved to [1m${DATA_ROOT}/gc10/runs/v_wiou_seed7/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_wiou_seed7/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs/v_wiou_seed7/weights/best.onnx imgsz=640 data=${DATA_ROOT}/gc10/data/GC10-DET-yolo/gc10_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=895.29 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+
+汇总: deploy_20260930_gc10_s/summary.tsv
+提示：延迟要报 p50 与 p95，并写清 batch 与分辨率；不同 batch 之间不可直接比。
+gc10_s exit=0
+=== [4/4] NEU s ===
+  [bridge] 6 个自定义类已挂到 __main__
+环境: {"torch": "2.1.2+cu118", "cuda": "11.8", "gpu": "NVIDIA GeForce RTX 4090", "cpu": "CPU(s):                          128\nModel name:                      Intel(R) Xeon(R) Gold 6430", "device_used": "cuda:0", "batch": 1, "iters": 100, "warmup": 20}
+
+待测 39 个 cell，batch=1 iters=100
+
+---- v_base_b8_seed2024 (imgsz=640) ----
+  pt_fp32  p50=4.60 ms  p95=4.80 ms  mem=193MB
+  pt_fp16  p50=5.33 ms  p95=6.19 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+Model summary (fused): 73 layers, 11,127,906 parameters, 0 gradients, 28.4 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_base_b8_seed2024/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 10, 8400) (21.5 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.6s, saved as 'runs/v_base_b8_seed2024/weights/best.onnx' (42.7 MB)
+
+Export complete (1.8s)
+Results saved to [1m${DATA_ROOT}/neu/runs/v_base_b8_seed2024/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_base_b8_seed2024/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs/v_base_b8_seed2024/weights/best.onnx imgsz=640 data=${DATA_ROOT}/neu/data/NEU-DET-split/neu_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=891.94 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_base_b8_seed42 (imgsz=640) ----
+  pt_fp32  p50=4.64 ms  p95=97.24 ms  mem=193MB
+  pt_fp16  p50=5.27 ms  p95=6.31 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+Model summary (fused): 73 layers, 11,127,906 parameters, 0 gradients, 28.4 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_base_b8_seed42/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 10, 8400) (21.5 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.5s, saved as 'runs/v_base_b8_seed42/weights/best.onnx' (42.7 MB)
+
+Export complete (1.8s)
+Results saved to [1m${DATA_ROOT}/neu/runs/v_base_b8_seed42/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_base_b8_seed42/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs/v_base_b8_seed42/weights/best.onnx imgsz=640 data=${DATA_ROOT}/neu/data/NEU-DET-split/neu_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=803.02 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_base_b8_seed7 (imgsz=640) ----
+  pt_fp32  p50=4.70 ms  p95=4.79 ms  mem=193MB
+  pt_fp16  p50=5.30 ms  p95=5.37 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+Model summary (fused): 73 layers, 11,127,906 parameters, 0 gradients, 28.4 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_base_b8_seed7/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 10, 8400) (21.5 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.3s, saved as 'runs/v_base_b8_seed7/weights/best.onnx' (42.7 MB)
+
+Export complete (1.5s)
+Results saved to [1m${DATA_ROOT}/neu/runs/v_base_b8_seed7/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_base_b8_seed7/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs/v_base_b8_seed7/weights/best.onnx imgsz=640 data=${DATA_ROOT}/neu/data/NEU-DET-split/neu_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=801.20 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_base_s320_b8_seed2024 (imgsz=320) ----
+  pt_fp32  p50=4.76 ms  p95=4.80 ms  mem=180MB
+  pt_fp16  p50=5.34 ms  p95=7.30 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+Model summary (fused): 73 layers, 11,127,906 parameters, 0 gradients, 7.1 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_base_s320_b8_seed2024/weights/best.pt' with input shape (1, 3, 320, 320) BCHW and output shape(s) (1, 10, 2100) (21.5 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.2s, saved as 'runs/v_base_s320_b8_seed2024/weights/best.onnx' (42.6 MB)
+
+Export complete (1.4s)
+Results saved to [1m${DATA_ROOT}/neu/runs/v_base_s320_b8_seed2024/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_base_s320_b8_seed2024/weights/best.onnx imgsz=320 
+Validate:        yolo val task=detect model=runs/v_base_s320_b8_seed2024/weights/best.onnx imgsz=320 data=${DATA_ROOT}/neu/data/NEU-DET-split/neu_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=299.75 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_base_s320_b8_seed42 (imgsz=320) ----
+  pt_fp32  p50=5.94 ms  p95=7.22 ms  mem=180MB
+  pt_fp16  p50=6.51 ms  p95=7.54 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+Model summary (fused): 73 layers, 11,127,906 parameters, 0 gradients, 7.1 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_base_s320_b8_seed42/weights/best.pt' with input shape (1, 3, 320, 320) BCHW and output shape(s) (1, 10, 2100) (21.5 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.7s, saved as 'runs/v_base_s320_b8_seed42/weights/best.onnx' (42.6 MB)
+
+Export complete (1.8s)
+Results saved to [1m${DATA_ROOT}/neu/runs/v_base_s320_b8_seed42/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_base_s320_b8_seed42/weights/best.onnx imgsz=320 
+Validate:        yolo val task=detect model=runs/v_base_s320_b8_seed42/weights/best.onnx imgsz=320 data=${DATA_ROOT}/neu/data/NEU-DET-split/neu_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=297.23 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_base_s320_b8_seed7 (imgsz=320) ----
+  pt_fp32  p50=5.86 ms  p95=7.89 ms  mem=180MB
+  pt_fp16  p50=6.47 ms  p95=7.65 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+Model summary (fused): 73 layers, 11,127,906 parameters, 0 gradients, 7.1 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_base_s320_b8_seed7/weights/best.pt' with input shape (1, 3, 320, 320) BCHW and output shape(s) (1, 10, 2100) (21.5 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.5s, saved as 'runs/v_base_s320_b8_seed7/weights/best.onnx' (42.6 MB)
+
+Export complete (1.7s)
+Results saved to [1m${DATA_ROOT}/neu/runs/v_base_s320_b8_seed7/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_base_s320_b8_seed7/weights/best.onnx imgsz=320 
+Validate:        yolo val task=detect model=runs/v_base_s320_b8_seed7/weights/best.onnx imgsz=320 data=${DATA_ROOT}/neu/data/NEU-DET-split/neu_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=396.86 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_base_s960_b8_seed2024 (imgsz=960) ----
+  pt_fp32  p50=4.89 ms  p95=5.14 ms  mem=253MB
+  pt_fp16  p50=5.56 ms  p95=5.68 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+Model summary (fused): 73 layers, 11,127,906 parameters, 0 gradients, 64.0 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_base_s960_b8_seed2024/weights/best.pt' with input shape (1, 3, 960, 960) BCHW and output shape(s) (1, 10, 18900) (21.6 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.3s, saved as 'runs/v_base_s960_b8_seed2024/weights/best.onnx' (42.9 MB)
+
+Export complete (1.7s)
+Results saved to [1m${DATA_ROOT}/neu/runs/v_base_s960_b8_seed2024/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_base_s960_b8_seed2024/weights/best.onnx imgsz=960 
+Validate:        yolo val task=detect model=runs/v_base_s960_b8_seed2024/weights/best.onnx imgsz=960 data=${DATA_ROOT}/neu/data/NEU-DET-split/neu_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=1302.49 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_base_s960_b8_seed42 (imgsz=960) ----
+  pt_fp32  p50=6.06 ms  p95=99.22 ms  mem=253MB
+  pt_fp16  p50=5.68 ms  p95=8.13 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+Model summary (fused): 73 layers, 11,127,906 parameters, 0 gradients, 64.0 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_base_s960_b8_seed42/weights/best.pt' with input shape (1, 3, 960, 960) BCHW and output shape(s) (1, 10, 18900) (21.6 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.4s, saved as 'runs/v_base_s960_b8_seed42/weights/best.onnx' (42.9 MB)
+
+Export complete (1.9s)
+Results saved to [1m${DATA_ROOT}/neu/runs/v_base_s960_b8_seed42/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_base_s960_b8_seed42/weights/best.onnx imgsz=960 
+Validate:        yolo val task=detect model=runs/v_base_s960_b8_seed42/weights/best.onnx imgsz=960 data=${DATA_ROOT}/neu/data/NEU-DET-split/neu_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=1298.49 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_base_s960_b8_seed7 (imgsz=960) ----
+  pt_fp32  p50=5.06 ms  p95=5.20 ms  mem=253MB
+  pt_fp16  p50=5.67 ms  p95=8.41 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+Model summary (fused): 73 layers, 11,127,906 parameters, 0 gradients, 64.0 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_base_s960_b8_seed7/weights/best.pt' with input shape (1, 3, 960, 960) BCHW and output shape(s) (1, 10, 18900) (21.6 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.6s, saved as 'runs/v_base_s960_b8_seed7/weights/best.onnx' (42.9 MB)
+
+Export complete (2.0s)
+Results saved to [1m${DATA_ROOT}/neu/runs/v_base_s960_b8_seed7/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_base_s960_b8_seed7/weights/best.onnx imgsz=960 
+Validate:        yolo val task=detect model=runs/v_base_s960_b8_seed7/weights/best.onnx imgsz=960 data=${DATA_ROOT}/neu/data/NEU-DET-split/neu_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=1494.79 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_base_seed2024 (imgsz=640) ----
+  pt_fp32  p50=5.33 ms  p95=6.32 ms  mem=193MB
+  pt_fp16  p50=5.75 ms  p95=5.80 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+Model summary (fused): 73 layers, 11,127,906 parameters, 0 gradients, 28.4 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_base_seed2024/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 10, 8400) (21.5 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.5s, saved as 'runs/v_base_seed2024/weights/best.onnx' (42.7 MB)
+
+Export complete (1.7s)
+Results saved to [1m${DATA_ROOT}/neu/runs/v_base_seed2024/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_base_seed2024/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs/v_base_seed2024/weights/best.onnx imgsz=640 data=${DATA_ROOT}/neu/data/NEU-DET-split/neu_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=699.09 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_base_seed42 (imgsz=640) ----
+  pt_fp32  p50=5.24 ms  p95=5.30 ms  mem=193MB
+  pt_fp16  p50=5.94 ms  p95=7.24 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+Model summary (fused): 73 layers, 11,127,906 parameters, 0 gradients, 28.4 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_base_seed42/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 10, 8400) (21.5 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.7s, saved as 'runs/v_base_seed42/weights/best.onnx' (42.7 MB)
+
+Export complete (1.9s)
+Results saved to [1m${DATA_ROOT}/neu/runs/v_base_seed42/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_base_seed42/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs/v_base_seed42/weights/best.onnx imgsz=640 data=${DATA_ROOT}/neu/data/NEU-DET-split/neu_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=704.28 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_base_seed7 (imgsz=640) ----
+  pt_fp32  p50=5.06 ms  p95=6.13 ms  mem=193MB
+  pt_fp16  p50=5.69 ms  p95=6.72 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+Model summary (fused): 73 layers, 11,127,906 parameters, 0 gradients, 28.4 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_base_seed7/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 10, 8400) (21.5 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.5s, saved as 'runs/v_base_seed7/weights/best.onnx' (42.7 MB)
+
+Export complete (1.7s)
+Results saved to [1m${DATA_ROOT}/neu/runs/v_base_seed7/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_base_seed7/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs/v_base_seed7/weights/best.onnx imgsz=640 data=${DATA_ROOT}/neu/data/NEU-DET-split/neu_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=939.46 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_dcsa_seed2024 (imgsz=640) ----
+  pt_fp32  p50=6.55 ms  p95=6.64 ms  mem=193MB
+  pt_fp16  p50=7.20 ms  p95=10.61 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+YOLOv8s summary (fused): 103 layers, 11,142,737 parameters, 0 gradients, 28.4 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_dcsa_seed2024/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 10, 8400) (21.5 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.9s, saved as 'runs/v_dcsa_seed2024/weights/best.onnx' (42.8 MB)
+
+Export complete (2.1s)
+Results saved to [1m${DATA_ROOT}/neu/runs/v_dcsa_seed2024/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_dcsa_seed2024/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs/v_dcsa_seed2024/weights/best.onnx imgsz=640 data=${DATA_ROOT}/neu/data/NEU-DET-split/neu_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=998.63 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_dcsa_seed42 (imgsz=640) ----
+  pt_fp32  p50=6.98 ms  p95=7.11 ms  mem=193MB
+  pt_fp16  p50=7.71 ms  p95=8.11 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+YOLOv8s summary (fused): 103 layers, 11,142,737 parameters, 0 gradients, 28.4 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_dcsa_seed42/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 10, 8400) (21.5 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 2.0s, saved as 'runs/v_dcsa_seed42/weights/best.onnx' (42.8 MB)
+
+Export complete (2.2s)
+Results saved to [1m${DATA_ROOT}/neu/runs/v_dcsa_seed42/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_dcsa_seed42/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs/v_dcsa_seed42/weights/best.onnx imgsz=640 data=${DATA_ROOT}/neu/data/NEU-DET-split/neu_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=996.50 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_dcsa_seed7 (imgsz=640) ----
+  pt_fp32  p50=6.59 ms  p95=8.04 ms  mem=193MB
+  pt_fp16  p50=7.28 ms  p95=9.24 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+YOLOv8s summary (fused): 103 layers, 11,142,737 parameters, 0 gradients, 28.4 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_dcsa_seed7/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 10, 8400) (21.5 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.9s, saved as 'runs/v_dcsa_seed7/weights/best.onnx' (42.8 MB)
+
+Export complete (2.1s)
+Results saved to [1m${DATA_ROOT}/neu/runs/v_dcsa_seed7/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_dcsa_seed7/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs/v_dcsa_seed7/weights/best.onnx imgsz=640 data=${DATA_ROOT}/neu/data/NEU-DET-split/neu_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=1011.10 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_focal_seed2024 (imgsz=640) ----
+  pt_fp32  p50=7.98 ms  p95=8.31 ms  mem=213MB
+  pt_fp16  p50=8.84 ms  p95=12.40 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+YOLOv8s-p2 summary (fused): 121 layers, 10,642,839 parameters, 0 gradients, 36.6 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_focal_seed2024/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 10, 34000) (20.8 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 2.1s, saved as 'runs/v_focal_seed2024/weights/best.onnx' (41.4 MB)
+
+Export complete (2.4s)
+Results saved to [1m${DATA_ROOT}/neu/runs/v_focal_seed2024/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_focal_seed2024/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs/v_focal_seed2024/weights/best.onnx imgsz=640 data=${DATA_ROOT}/neu/data/NEU-DET-split/neu_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=1702.25 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_focal_seed42 (imgsz=640) ----
+  pt_fp32  p50=8.16 ms  p95=11.40 ms  mem=213MB
+  pt_fp16  p50=8.94 ms  p95=13.77 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+YOLOv8s-p2 summary (fused): 121 layers, 10,642,839 parameters, 0 gradients, 36.6 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_focal_seed42/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 10, 34000) (20.8 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 2.2s, saved as 'runs/v_focal_seed42/weights/best.onnx' (41.4 MB)
+
+Export complete (2.5s)
+Results saved to [1m${DATA_ROOT}/neu/runs/v_focal_seed42/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_focal_seed42/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs/v_focal_seed42/weights/best.onnx imgsz=640 data=${DATA_ROOT}/neu/data/NEU-DET-split/neu_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=1899.33 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_focal_seed7 (imgsz=640) ----
+  pt_fp32  p50=8.05 ms  p95=9.11 ms  mem=213MB
+  pt_fp16  p50=8.87 ms  p95=9.01 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+YOLOv8s-p2 summary (fused): 121 layers, 10,642,839 parameters, 0 gradients, 36.6 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_focal_seed7/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 10, 34000) (20.8 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 2.1s, saved as 'runs/v_focal_seed7/weights/best.onnx' (41.4 MB)
+
+Export complete (2.4s)
+Results saved to [1m${DATA_ROOT}/neu/runs/v_focal_seed7/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_focal_seed7/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs/v_focal_seed7/weights/best.onnx imgsz=640 data=${DATA_ROOT}/neu/data/NEU-DET-split/neu_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=2206.03 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_full_cpw0p5_seed2024 (imgsz=640) ----
+  pt_fp32  p50=8.08 ms  p95=13.74 ms  mem=213MB
+  pt_fp16  p50=8.82 ms  p95=11.85 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+YOLOv8s-p2 summary (fused): 121 layers, 10,642,839 parameters, 0 gradients, 36.6 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_full_cpw0p5_seed2024/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 10, 34000) (20.8 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 2.1s, saved as 'runs/v_full_cpw0p5_seed2024/weights/best.onnx' (41.4 MB)
+
+Export complete (2.4s)
+Results saved to [1m${DATA_ROOT}/neu/runs/v_full_cpw0p5_seed2024/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_full_cpw0p5_seed2024/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs/v_full_cpw0p5_seed2024/weights/best.onnx imgsz=640 data=${DATA_ROOT}/neu/data/NEU-DET-split/neu_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=1598.64 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_full_cpw0p5_seed42 (imgsz=640) ----
+  pt_fp32  p50=8.04 ms  p95=8.24 ms  mem=213MB
+  pt_fp16  p50=8.80 ms  p95=8.90 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+YOLOv8s-p2 summary (fused): 121 layers, 10,642,839 parameters, 0 gradients, 36.6 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_full_cpw0p5_seed42/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 10, 34000) (20.8 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 2.2s, saved as 'runs/v_full_cpw0p5_seed42/weights/best.onnx' (41.4 MB)
+
+Export complete (2.5s)
+Results saved to [1m${DATA_ROOT}/neu/runs/v_full_cpw0p5_seed42/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_full_cpw0p5_seed42/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs/v_full_cpw0p5_seed42/weights/best.onnx imgsz=640 data=${DATA_ROOT}/neu/data/NEU-DET-split/neu_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=1702.30 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_full_cpw0p5_seed7 (imgsz=640) ----
+  pt_fp32  p50=7.73 ms  p95=9.85 ms  mem=213MB
+  pt_fp16  p50=8.52 ms  p95=11.13 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+YOLOv8s-p2 summary (fused): 121 layers, 10,642,839 parameters, 0 gradients, 36.6 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_full_cpw0p5_seed7/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 10, 34000) (20.8 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 2.3s, saved as 'runs/v_full_cpw0p5_seed7/weights/best.onnx' (41.4 MB)
+
+Export complete (2.6s)
+Results saved to [1m${DATA_ROOT}/neu/runs/v_full_cpw0p5_seed7/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_full_cpw0p5_seed7/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs/v_full_cpw0p5_seed7/weights/best.onnx imgsz=640 data=${DATA_ROOT}/neu/data/NEU-DET-split/neu_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=1696.24 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_full_seed2024 (imgsz=640) ----
+  pt_fp32  p50=8.21 ms  p95=10.27 ms  mem=213MB
+  pt_fp16  p50=8.99 ms  p95=11.76 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+YOLOv8s-p2 summary (fused): 121 layers, 10,642,839 parameters, 0 gradients, 36.6 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_full_seed2024/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 10, 34000) (20.8 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 2.1s, saved as 'runs/v_full_seed2024/weights/best.onnx' (41.4 MB)
+
+Export complete (2.6s)
+Results saved to [1m${DATA_ROOT}/neu/runs/v_full_seed2024/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_full_seed2024/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs/v_full_seed2024/weights/best.onnx imgsz=640 data=${DATA_ROOT}/neu/data/NEU-DET-split/neu_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=1591.69 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_full_seed42 (imgsz=640) ----
+  pt_fp32  p50=7.89 ms  p95=11.24 ms  mem=213MB
+  pt_fp16  p50=8.73 ms  p95=11.21 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+YOLOv8s-p2 summary (fused): 121 layers, 10,642,839 parameters, 0 gradients, 36.6 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_full_seed42/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 10, 34000) (20.8 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 2.3s, saved as 'runs/v_full_seed42/weights/best.onnx' (41.4 MB)
+
+Export complete (2.7s)
+Results saved to [1m${DATA_ROOT}/neu/runs/v_full_seed42/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_full_seed42/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs/v_full_seed42/weights/best.onnx imgsz=640 data=${DATA_ROOT}/neu/data/NEU-DET-split/neu_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=1798.68 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_full_seed7 (imgsz=640) ----
+  pt_fp32  p50=8.05 ms  p95=8.95 ms  mem=213MB
+  pt_fp16  p50=8.88 ms  p95=9.59 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+YOLOv8s-p2 summary (fused): 121 layers, 10,642,839 parameters, 0 gradients, 36.6 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_full_seed7/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 10, 34000) (20.8 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 2.2s, saved as 'runs/v_full_seed7/weights/best.onnx' (41.4 MB)
+
+Export complete (2.5s)
+Results saved to [1m${DATA_ROOT}/neu/runs/v_full_seed7/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_full_seed7/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs/v_full_seed7/weights/best.onnx imgsz=640 data=${DATA_ROOT}/neu/data/NEU-DET-split/neu_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=1603.18 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_p1_b8_seed2024 (imgsz=640) ----
+  pt_fp32  p50=5.60 ms  p95=6.43 ms  mem=240MB
+  pt_fp16  p50=6.21 ms  p95=8.16 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+YOLOv8s-p1 summary (fused): 80 layers, 10,016,072 parameters, 0 gradients, 39.8 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_p1_b8_seed2024/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 10, 110800) (20.0 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.6s, saved as 'runs/v_p1_b8_seed2024/weights/best.onnx' (40.4 MB)
+
+Export complete (1.9s)
+Results saved to [1m${DATA_ROOT}/neu/runs/v_p1_b8_seed2024/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_p1_b8_seed2024/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs/v_p1_b8_seed2024/weights/best.onnx imgsz=640 data=${DATA_ROOT}/neu/data/NEU-DET-split/neu_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=2500.82 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_p1_b8_seed42 (imgsz=640) ----
+  pt_fp32  p50=5.82 ms  p95=5.95 ms  mem=240MB
+  pt_fp16  p50=6.56 ms  p95=6.93 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+YOLOv8s-p1 summary (fused): 80 layers, 10,016,072 parameters, 0 gradients, 39.8 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_p1_b8_seed42/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 10, 110800) (20.0 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.5s, saved as 'runs/v_p1_b8_seed42/weights/best.onnx' (40.4 MB)
+
+Export complete (1.8s)
+Results saved to [1m${DATA_ROOT}/neu/runs/v_p1_b8_seed42/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_p1_b8_seed42/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs/v_p1_b8_seed42/weights/best.onnx imgsz=640 data=${DATA_ROOT}/neu/data/NEU-DET-split/neu_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=2699.08 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_p1_b8_seed7 (imgsz=640) ----
+  pt_fp32  p50=5.82 ms  p95=6.30 ms  mem=240MB
+  pt_fp16  p50=6.54 ms  p95=7.11 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+YOLOv8s-p1 summary (fused): 80 layers, 10,016,072 parameters, 0 gradients, 39.8 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_p1_b8_seed7/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 10, 110800) (20.0 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.4s, saved as 'runs/v_p1_b8_seed7/weights/best.onnx' (40.4 MB)
+
+Export complete (1.8s)
+Results saved to [1m${DATA_ROOT}/neu/runs/v_p1_b8_seed7/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_p1_b8_seed7/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs/v_p1_b8_seed7/weights/best.onnx imgsz=640 data=${DATA_ROOT}/neu/data/NEU-DET-split/neu_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=2900.69 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_p2_seed2024 (imgsz=640) ----
+  pt_fp32  p50=6.60 ms  p95=6.78 ms  mem=213MB
+  pt_fp16  p50=7.43 ms  p95=11.02 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+YOLOv8s-p2 summary (fused): 91 layers, 10,628,008 parameters, 0 gradients, 36.6 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_p2_seed2024/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 10, 34000) (20.7 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.7s, saved as 'runs/v_p2_seed2024/weights/best.onnx' (41.3 MB)
+
+Export complete (2.2s)
+Results saved to [1m${DATA_ROOT}/neu/runs/v_p2_seed2024/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_p2_seed2024/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs/v_p2_seed2024/weights/best.onnx imgsz=640 data=${DATA_ROOT}/neu/data/NEU-DET-split/neu_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=1595.27 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_p2_seed42 (imgsz=640) ----
+  pt_fp32  p50=6.53 ms  p95=6.58 ms  mem=213MB
+  pt_fp16  p50=7.38 ms  p95=7.50 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+YOLOv8s-p2 summary (fused): 91 layers, 10,628,008 parameters, 0 gradients, 36.6 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_p2_seed42/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 10, 34000) (20.7 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.6s, saved as 'runs/v_p2_seed42/weights/best.onnx' (41.3 MB)
+
+Export complete (2.0s)
+Results saved to [1m${DATA_ROOT}/neu/runs/v_p2_seed42/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_p2_seed42/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs/v_p2_seed42/weights/best.onnx imgsz=640 data=${DATA_ROOT}/neu/data/NEU-DET-split/neu_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=1600.85 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_p2_seed7 (imgsz=640) ----
+  pt_fp32  p50=6.50 ms  p95=9.51 ms  mem=213MB
+  pt_fp16  p50=7.52 ms  p95=10.30 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+YOLOv8s-p2 summary (fused): 91 layers, 10,628,008 parameters, 0 gradients, 36.6 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_p2_seed7/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 10, 34000) (20.7 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.7s, saved as 'runs/v_p2_seed7/weights/best.onnx' (41.3 MB)
+
+Export complete (2.2s)
+Results saved to [1m${DATA_ROOT}/neu/runs/v_p2_seed7/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_p2_seed7/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs/v_p2_seed7/weights/best.onnx imgsz=640 data=${DATA_ROOT}/neu/data/NEU-DET-split/neu_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=1406.39 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_p2dcsawiou_seed2024 (imgsz=640) ----
+  pt_fp32  p50=8.26 ms  p95=8.32 ms  mem=213MB
+  pt_fp16  p50=9.05 ms  p95=9.15 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+YOLOv8s-p2 summary (fused): 121 layers, 10,642,839 parameters, 0 gradients, 36.6 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_p2dcsawiou_seed2024/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 10, 34000) (20.8 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 2.2s, saved as 'runs/v_p2dcsawiou_seed2024/weights/best.onnx' (41.4 MB)
+
+Export complete (2.5s)
+Results saved to [1m${DATA_ROOT}/neu/runs/v_p2dcsawiou_seed2024/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_p2dcsawiou_seed2024/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs/v_p2dcsawiou_seed2024/weights/best.onnx imgsz=640 data=${DATA_ROOT}/neu/data/NEU-DET-split/neu_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=1707.28 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_p2dcsawiou_seed42 (imgsz=640) ----
+  pt_fp32  p50=8.16 ms  p95=10.99 ms  mem=213MB
+  pt_fp16  p50=8.68 ms  p95=10.89 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+YOLOv8s-p2 summary (fused): 121 layers, 10,642,839 parameters, 0 gradients, 36.6 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_p2dcsawiou_seed42/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 10, 34000) (20.8 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 2.1s, saved as 'runs/v_p2dcsawiou_seed42/weights/best.onnx' (41.4 MB)
+
+Export complete (2.6s)
+Results saved to [1m${DATA_ROOT}/neu/runs/v_p2dcsawiou_seed42/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_p2dcsawiou_seed42/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs/v_p2dcsawiou_seed42/weights/best.onnx imgsz=640 data=${DATA_ROOT}/neu/data/NEU-DET-split/neu_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=1704.48 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_p2dcsawiou_seed7 (imgsz=640) ----
+  pt_fp32  p50=8.07 ms  p95=8.38 ms  mem=213MB
+  pt_fp16  p50=8.96 ms  p95=9.07 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+YOLOv8s-p2 summary (fused): 121 layers, 10,642,839 parameters, 0 gradients, 36.6 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_p2dcsawiou_seed7/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 10, 34000) (20.8 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 2.1s, saved as 'runs/v_p2dcsawiou_seed7/weights/best.onnx' (41.4 MB)
+
+Export complete (2.4s)
+Results saved to [1m${DATA_ROOT}/neu/runs/v_p2dcsawiou_seed7/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_p2dcsawiou_seed7/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs/v_p2dcsawiou_seed7/weights/best.onnx imgsz=640 data=${DATA_ROOT}/neu/data/NEU-DET-split/neu_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=1793.84 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_resample_seed2024 (imgsz=640) ----
+  pt_fp32  p50=8.06 ms  p95=11.25 ms  mem=213MB
+  pt_fp16  p50=8.91 ms  p95=12.47 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+YOLOv8s-p2 summary (fused): 121 layers, 10,642,839 parameters, 0 gradients, 36.6 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_resample_seed2024/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 10, 34000) (20.8 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 2.1s, saved as 'runs/v_resample_seed2024/weights/best.onnx' (41.4 MB)
+
+Export complete (2.4s)
+Results saved to [1m${DATA_ROOT}/neu/runs/v_resample_seed2024/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_resample_seed2024/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs/v_resample_seed2024/weights/best.onnx imgsz=640 data=${DATA_ROOT}/neu/data/NEU-DET-split/neu_det_resampled.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=1506.27 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_resample_seed42 (imgsz=640) ----
+  pt_fp32  p50=8.14 ms  p95=8.20 ms  mem=213MB
+  pt_fp16  p50=8.90 ms  p95=9.03 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+YOLOv8s-p2 summary (fused): 121 layers, 10,642,839 parameters, 0 gradients, 36.6 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_resample_seed42/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 10, 34000) (20.8 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 2.1s, saved as 'runs/v_resample_seed42/weights/best.onnx' (41.4 MB)
+
+Export complete (2.4s)
+Results saved to [1m${DATA_ROOT}/neu/runs/v_resample_seed42/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_resample_seed42/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs/v_resample_seed42/weights/best.onnx imgsz=640 data=${DATA_ROOT}/neu/data/NEU-DET-split/neu_det_resampled.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=1602.37 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_resample_seed7 (imgsz=640) ----
+  pt_fp32  p50=9.64 ms  p95=9.76 ms  mem=213MB
+  pt_fp16  p50=10.68 ms  p95=16.66 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+YOLOv8s-p2 summary (fused): 121 layers, 10,642,839 parameters, 0 gradients, 36.6 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_resample_seed7/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 10, 34000) (20.8 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 2.2s, saved as 'runs/v_resample_seed7/weights/best.onnx' (41.4 MB)
+
+Export complete (2.6s)
+Results saved to [1m${DATA_ROOT}/neu/runs/v_resample_seed7/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_resample_seed7/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs/v_resample_seed7/weights/best.onnx imgsz=640 data=${DATA_ROOT}/neu/data/NEU-DET-split/neu_det_resampled.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=1498.41 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_wiou_seed2024 (imgsz=640) ----
+  pt_fp32  p50=5.36 ms  p95=5.43 ms  mem=193MB
+  pt_fp16  p50=6.10 ms  p95=6.19 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+Model summary (fused): 73 layers, 11,127,906 parameters, 0 gradients, 28.4 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_wiou_seed2024/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 10, 8400) (21.5 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.4s, saved as 'runs/v_wiou_seed2024/weights/best.onnx' (42.7 MB)
+
+Export complete (1.6s)
+Results saved to [1m${DATA_ROOT}/neu/runs/v_wiou_seed2024/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_wiou_seed2024/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs/v_wiou_seed2024/weights/best.onnx imgsz=640 data=${DATA_ROOT}/neu/data/NEU-DET-split/neu_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=808.56 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_wiou_seed42 (imgsz=640) ----
+  pt_fp32  p50=5.39 ms  p95=5.51 ms  mem=193MB
+  pt_fp16  p50=6.14 ms  p95=6.78 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+Model summary (fused): 73 layers, 11,127,906 parameters, 0 gradients, 28.4 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_wiou_seed42/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 10, 8400) (21.5 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.5s, saved as 'runs/v_wiou_seed42/weights/best.onnx' (42.7 MB)
+
+Export complete (1.7s)
+Results saved to [1m${DATA_ROOT}/neu/runs/v_wiou_seed42/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_wiou_seed42/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs/v_wiou_seed42/weights/best.onnx imgsz=640 data=${DATA_ROOT}/neu/data/NEU-DET-split/neu_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=602.00 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+---- v_wiou_seed7 (imgsz=640) ----
+  pt_fp32  p50=6.44 ms  p95=90.47 ms  mem=193MB
+  pt_fp16  p50=7.24 ms  p95=9.34 ms
+Ultralytics 8.4.115 🚀 Python-3.10.8 torch-2.1.2+cu118 CPU (Intel Xeon Gold 6430)
+Model summary (fused): 73 layers, 11,127,906 parameters, 0 gradients, 28.4 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'runs/v_wiou_seed7/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 10, 8400) (21.5 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.23.0 opset 12...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.96...
+[34m[1mONNX:[0m export success ✅ 1.7s, saved as 'runs/v_wiou_seed7/weights/best.onnx' (42.7 MB)
+
+Export complete (2.0s)
+Results saved to [1m${DATA_ROOT}/neu/runs/v_wiou_seed7/weights/best.onnx[0m
+Predict:         yolo predict task=detect model=runs/v_wiou_seed7/weights/best.onnx imgsz=640 
+Validate:        yolo val task=detect model=runs/v_wiou_seed7/weights/best.onnx imgsz=640 data=${DATA_ROOT}/neu/data/NEU-DET-split/neu_det.yaml  
+Visualize:       https://netron.app
+  onnx_cpu  p50=701.64 ms（providers=['AzureExecutionProvider', 'CPUExecutionProvider']）
+  [clean] 已删除临时 onnx: best.onnx
+
+汇总: deploy_20260930_neu_s/summary.tsv
+提示：延迟要报 p50 与 p95，并写清 batch 与分辨率；不同 batch 之间不可直接比。
+neu_s exit=0
+ALL DONE Wed Sep 30 16:58:30 CST 2026

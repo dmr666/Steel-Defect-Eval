@@ -1,0 +1,6 @@
+臂	cell	n	mAP50-95	mAP50	稀有类(pitted_surface,scratches)	其余类均值
+无处理	v_p2dcsawiou	0	—	—	—	—
+指数加权 0.5	v_full_cpw0p5	0	—	—	—	—
+指数加权 1.0	v_full	3	0.4441±0.0075	0.7888±0.0214	0.9013	0.7326±0.0253
+重采样	v_resample	0	—	—	—	—
+Focal	v_focal	0	—	—	—	—

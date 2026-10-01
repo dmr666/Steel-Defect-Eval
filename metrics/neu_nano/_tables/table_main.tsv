@@ -1,0 +1,14 @@
+cell	variant	imgsz	batch	cls_pw	n	val mAP50-95	val mAP50	test mAP50-95	params	不平衡臂	ckpt_has_dcsa
+v_base	v_base	640	16	0.0	3	0.4340±0.0043	0.7977±0.0073	0.3678±0.0080	3157200	none	—
+v_p2	v_p2	640	16	0.0	3	0.4352±0.0101	0.7888±0.0132	0.3620±0.0172	2927352	none	—
+v_dcsa	v_dcsa	640	16	0.0	3	0.4373±0.0047	0.7899±0.0037	0.3756±0.0140	3017633	none	True
+v_wiou	v_wiou	640	16	0.0	3	0.4336±0.0054	0.7758±0.0052	0.3546±0.0062	3157200	none	—
+v_p2dcsawiou	v_p2dcsawiou	640	16	0.0	0	—	—	—	—	—	—
+v_full	v_full	640	16	1.0	3	0.4441±0.0075	0.7888±0.0214	0.3682±0.0108	2932967	cls_pw	True
+v_full_cpw0p5	v_full	640	16	0.5	0	—	—	—	—	—	—
+v_p1_b8	v_p1	640	8	0.0	0	—	—	—	—	—	—
+v_base_s320_b8	v_base	320	8	0.0	0	—	—	—	—	—	—
+v_base_b8	v_base	640	8	0.0	0	—	—	—	—	—	—
+v_base_s960_b8	v_base	960	8	0.0	0	—	—	—	—	—	—
+v_resample	v_resample	640	16	0.0	0	—	—	—	—	—	—
+v_focal	v_focal	640	16	0.0	0	—	—	—	—	—	—

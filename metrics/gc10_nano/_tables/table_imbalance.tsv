@@ -1,0 +1,6 @@
+臂	cell	n	mAP50-95	mAP50	稀有类(zhehen,yahen)	其余类均值
+无处理	v_p2dcsawiou	0	—	—	—	—
+指数加权 0.5	v_full_cpw0p5	0	—	—	—	—
+指数加权 1.0	v_full	3	0.2668±0.0111	0.5802±0.0238	0.1321	0.6922±0.0216
+重采样	v_resample	0	—	—	—	—
+Focal	v_focal	0	—	—	—	—
