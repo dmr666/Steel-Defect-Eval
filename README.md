@@ -19,7 +19,7 @@ GPU memory, model size).
 | Directory | Contents |
 |---|---|
 | `code/` | Training, evaluation, aggregation, figure generation and the statistics script. `code/configs/` holds the model and dataset YAMLs used for every arm. |
-| `metrics/` | **All 150 runs** (120 in the original matrix + 30 revision controls): `results.csv` (per-epoch), `args.yaml` (exact resolved configuration) and `perclass_ap.json` (per-class val/test AP at 0.5 and 0.5:0.95) per run, plus the aggregation tables (`_tables/`). Revision groups are the `*_scratch` ones (from-scratch baselines) and `neu_s_e300` (300-epoch budget check). |
+| `metrics/` | **All 154 runs** (120 in the original matrix + 34 revision runs): `results.csv` (per-epoch), `args.yaml` (exact resolved configuration) and `perclass_ap.json` (per-class val/test AP at 0.5 and 0.5:0.95) per run, plus the aggregation tables (`_tables/`). Revision groups are the `*_scratch` ones (from-scratch baselines), the `*_scratch300` ones (300-epoch budget reinforcement) and `neu_s_e300` (300-epoch budget check). |
 | `deploy/` | Raw per-run JSON of the deployment battery for the four benchmark groups, and the unified measurement log. |
 | `tables/` | The final paper tables (English appendix + Chinese working version) in text/markdown form. |
 | `MANIFEST.tsv` | Maps every run directory to its dataset/scale group. |
@@ -37,6 +37,7 @@ Beyond the original matrix, the same layout also carries the revision controls:
 | `metrics/gc10_s`, `metrics/neu_s` | +12 | seeds 13 and 99 for the baseline, the full stack and Focal (five seeds for the key cells) |
 | `metrics/gc10_s_scratch`, `gc10_nano_scratch`, `neu_s_scratch`, `neu_nano_scratch` | 12 | from-scratch baselines (structure YAML as weights, no COCO checkpoint), same protocol and budget — the reference for the pretraining-confound control |
 | `metrics/neu_s_e300` | 6 | NEU-DET 300-epoch budget check |
+| `metrics/*_scratch300` | 4 | from-scratch baselines trained for 300 epochs instead of 200 (seed 42), the budget reinforcement behind SI Table S13 |
 | `iou_sweep/` | 2 | AP swept over IoU 0.50–0.95 for the baseline and the full stack on both benchmarks |
 
 Code added: `code/eval_iou_sweep.py`, `code/run_review_extra_seeds.sh`, `code/run_review_scratch.sh`,
