@@ -21,8 +21,28 @@ RES = os.path.join(ROOT, "_results")
 OUT = os.path.join(RES, "review_stats")
 os.makedirs(OUT, exist_ok=True)
 
-sys.path.insert(0, "C:/Users/69416/AppData/Local/hermes/skills/research/sci-paper-workflow/scripts")
-from t_test_pure_python import ttest_ind  # noqa: E402
+# Pure-stdlib independent-samples t-test (no scipy / no external helper).
+def _t_cdf(t, df):
+    def pdf(x):
+        c = math.gamma((df + 1) / 2) / (math.sqrt(df * math.pi) * math.gamma(df / 2))
+        return c * (1 + x * x / df) ** (-(df + 1) / 2)
+    a, b, n = -20.0, t, 40000
+    h = (b - a) / n
+    s = pdf(a) + pdf(b)
+    for i in range(1, n):
+        x = a + i * h
+        s += pdf(x) * (4 if i % 2 else 2)
+    return s * h / 3
+
+
+def ttest_ind(a, b):
+    """Independent-samples t-test: returns (t, p, mean_a, mean_b)."""
+    na, nb = len(a), len(b)
+    ma, mb = sum(a) / na, sum(b) / nb
+    va = sum((x - ma) ** 2 for x in a) / (na - 1)
+    vb = sum((x - mb) ** 2 for x in b) / (nb - 1)
+    t = (ma - mb) / math.sqrt(va / na + vb / nb)
+    return t, 2 * (1 - _t_cdf(abs(t), na + nb - 2)), ma, mb
 
 SRC = {
     ("GC10", "s"): (f"{RES}/gc10_20260929/defect_gc10_runs_small.tar.gz", "runs"),

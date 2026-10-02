@@ -24,7 +24,7 @@ import collections
 import zipfile
 from PIL import Image
 
-ZIP = r"D:\BaiduNetdiskDownload\GC10-DET.zip"
+ZIP = r"${DATA_ROOT}/GC10-DET.zip"
 ROOT = r".\data"
 OUT = os.path.join(ROOT, "GC10-DET-yolo")
 SEED = 0

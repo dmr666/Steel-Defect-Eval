@@ -19,7 +19,7 @@ GPU memory, model size).
 | Directory | Contents |
 |---|---|
 | `code/` | Training, evaluation, aggregation, figure generation and the statistics script. `code/configs/` holds the model and dataset YAMLs used for every arm. |
-| `metrics/` | **All 120 runs**: `results.csv` (per-epoch), `args.yaml` (exact resolved configuration) and `perclass_ap.json` (per-class val/test AP at 0.5 and 0.5:0.95) per run, plus the aggregation tables (`_tables/`). |
+| `metrics/` | **All 150 runs** (120 in the original matrix + 30 revision controls): `results.csv` (per-epoch), `args.yaml` (exact resolved configuration) and `perclass_ap.json` (per-class val/test AP at 0.5 and 0.5:0.95) per run, plus the aggregation tables (`_tables/`). Revision groups are the `*_scratch` ones (from-scratch baselines) and `neu_s_e300` (300-epoch budget check). |
 | `deploy/` | Raw per-run JSON of the deployment battery for the four benchmark groups, and the unified measurement log. |
 | `tables/` | The final paper tables (English appendix + Chinese working version) in text/markdown form. |
 | `MANIFEST.tsv` | Maps every run directory to its dataset/scale group. |
@@ -28,14 +28,35 @@ Run directory names are `variant_seed<N>`; variants are defined in `code/defect_
 `code/run_matrix_neu.sh`, `code/run_matrix_gc10.sh`, `code/run_nano.sh` and
 `code/run_gc10_e300.sh` are the exact command sequences that produced the matrix.
 
+## Revision additions (tag `v1.1-revision`)
+
+Beyond the original matrix, the same layout also carries the revision controls:
+
+| Group | Runs | What it is |
+|---|---|---|
+| `metrics/gc10_s`, `metrics/neu_s` | +12 | seeds 13 and 99 for the baseline, the full stack and Focal (five seeds for the key cells) |
+| `metrics/gc10_s_scratch`, `gc10_nano_scratch`, `neu_s_scratch`, `neu_nano_scratch` | 12 | from-scratch baselines (structure YAML as weights, no COCO checkpoint), same protocol and budget — the reference for the pretraining-confound control |
+| `metrics/neu_s_e300` | 6 | NEU-DET 300-epoch budget check |
+| `iou_sweep/` | 2 | AP swept over IoU 0.50–0.95 for the baseline and the full stack on both benchmarks |
+
+Code added: `code/eval_iou_sweep.py`, `code/run_review_extra_seeds.sh`, `code/run_review_scratch.sh`,
+`code/run_review_neu_e300.sh`, `code/run_review_scratch_e300.sh`, `code/collect_review.sh`,
+`code/reviewB_analyze.py`, `code/review_stats_v2.py`, `code/gen_si_tables_v2.py`.
+
+Note on the IoU sweep: its absolute values come from predictions exported by the ultralytics validation
+pass itself and reproduce the official held-out test mAP50-95 to within +0.012…+0.027 (systematic +0.02).
+They are meant for threshold-to-threshold trend comparisons inside one consistent pipeline; the official
+numbers under `metrics/` remain the reference for absolute values.
+
 ## Scope and honesty notes
 
 * Positive findings are reported as bounded by this protocol; the paper explicitly does **not** claim
   that these modules are useless in general.
-* Significance in the paper uses the pre-registered rule `|Δ| > 2 σ_pooled`. `code/review_stats.py`
+* Significance in the paper uses the pre-registered rule `|Δ| > 2 σ_pooled`. `code/review_stats_v2.py`
   additionally runs Welch two-sample t-tests with Holm adjustment across each comparison family
-  (Supplementary Table S9) — under that stricter criterion the s-scale differences do not survive,
-  which is stated in the paper rather than hidden.
+  (Supplementary Table S9). In the revision the baseline, the full stack and Focal were extended from
+  3 to 5 seeds; under the stricter criterion the two GC10-DET effects (full stack, Focal) now survive as
+  well, while on NEU-DET nothing becomes significant — stated in the paper rather than hidden.
 * Deployment numbers for the CPU column were measured on a **server-class CPU (Xeon Gold 6430)**,
   i.e. a line-side rather than an embedded/ARM/NPU proxy. Values from different measurement sessions
   are not comparable (same-architecture cross-session spread ≈ 11%); only deterministic quantities
